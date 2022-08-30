@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import {Link} from "react-router-dom"
-import logo from "../../images/logorealn.png";
-import "./nav.scss";
+import logo2 from "../../images/logo2.jpg";
+import "./nav2.scss";
 
 const Nav = () => {
   const [isBuyActive, setIsBuyActive] = useState(false);
   return (
-    <nav>
-      <Link to="/"> <img src={logo} alt="logo"></img></Link>
-      <ul className="nav-bar">
+    <nav className="nav2">
+      <Link to="/"> <img src={logo2} alt="logo"></img></Link>
+      <ul className="nav-bar2">
         <li>500-000-000</li>
         <li onMouseEnter={(e) => setIsBuyActive(true)}>Kup</li>
         {isBuyActive && (

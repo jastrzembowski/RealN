@@ -1,8 +1,13 @@
 $blue: rgba(7, 7, 81, 1);
-$gray: rgba(238, 238, 238, 1);
-
+$dark-blue: rgba(6, 6, 58, 1);
+$gray: #eeeeee;
+$dark-gray: rgba(79, 79, 79, 1);
+$mid-gray: rgba(197, 197, 197, 0.8);
 
 body {
     margin: 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+.text-bold{
+    font-weight: 700;
 }

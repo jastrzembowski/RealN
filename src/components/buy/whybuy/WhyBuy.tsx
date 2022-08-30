@@ -15,19 +15,19 @@ const whybuy = () => {
         <h1>Dlaczego warto kupić właśnie u nas?</h1>
         <ul>
           <li>
-            <p>Znajdź domy jako pierwszy, zwiedzaj domy szybko</p> Aktualizujemy
-            oferty co 5 minut, więc możesz wyprzedzić innych kupujących poprzez
-            natychmiastową rezerwację wycieczki z agentem RealN.
+            <p>Z nami znajdziesz wymarzoną nieruchomość, już dziś umów się na prezentację!
+</p>Aktualizujemy oferty co 5 minut więc możesz wyprzedzić innych kupujących 
+poprzez natychmiastową rezerwację prezentacji z Agentem RealN.
+
           </li>
           <li>
-            <p> Lokalny agent RealN jako Twój przewodnik </p>Twój agent wie, co
-            trzeba zrobić, aby napisać udaną ofertę tam, gdzie chcesz mieszkać –
-            i nigdy nie będzie was naciskać na zakup domu, który nie jest
-            odpowiedni.
+            <p> Lokalny agent RealN jako Twój przewodnik </p>Twój Agent pomoże Ci w najlepszy sposób przejść przez proces negocjacji, bazując na jego wieloletnim doświdczeniu-
+Z nami poczujesz się bezpiecznie dokonując właściwego wyboru.
+
           </li>
           <li>
-            <p> Bez prowizji </p>Nie płacisz prowizji jako kupujący, ponieważ
-            nasza technologia czyni nas bardziej efektywnymi.
+            <p> Bez prowizji </p><span className="text-bold">Nie pobieramy prowizji od strony Kupującej</span> dzięki naszej wyjątkowej technologii, wyróżniamy się dużą skutecznością w działaniach.
+
           </li>{" "}
         </ul>
       </article>
@@ -37,31 +37,34 @@ const whybuy = () => {
         <h1>Jak to działa?</h1>
         <ul>
           <li>
-            <p>Zwiedzanie domów na żądanie</p> Zwiedzanie za pośrednictwem
-            naszej strony i aplikacji jest łatwe. Zapisz wyszukiwanie w swoich
-            ulubionych dzielnicach, aby otrzymywać powiadomienia o nowych
-            domach.
+            <p>Bądź na bieżąco, tak aby najlepsze Cię nie ominęło.
+</p> Zwiedzanie za pośrednictwem naszej strony i aplikacji jest łatwe. 
+Zapisz wyszukiwanie w swoich ulubionych dzielnicach, aby otrzymywać powiadomienia o nowych domach.
+
           </li>
           <li>
-            <p>Spotkanie z agentem RealN </p>Twój agent dowie się więcej o Tobie
-            i Twoich potrzebach oraz przygotuje plan napisania udanej oferty na
-            Twój wymarzony dom.
+            <p>Spotkanie z Agentem RealN-zaoszczędzisz z nami swój czas
+</p>Na podstawie szczegółowego wywiadu i określeniu 6 najważniejszych cech dotyczących Twojej wymarzonej nieruchomości
+Twój Agent rozpocznie przygotowanie idealnie dopasowanych ofert.
+
           </li>
           <li>
-            <p> Złóż ofertę i zamknij</p>Twój agent i jego zespół pomogą Ci w
-            negocjacjach i przeprowadzą Cię przez proces zamknięcia, a następnie
-            podpiszesz umowę online.
-          </li>{" "}
+            <p> Złóż ofertę i w krótkim czasie odbierz klucze od Twojego nowego M.
+</p>W prosty i bezpieczny sposób pomożemy przejść Ci ten proces.
+
+          </li>
         </ul>
       </article>
       <article className="mockup-holder">
         <img src={mock} alt="site mockup"></img>
         <aside>
-          <h1>Zwiedzanie wybranego domu</h1>
+          <h1>Zapraszamy na prezentacje 
+</h1>
           <p>
-            Aktualizujemy oferty co 5 minut, więc możesz wyprzedzić innych
-            kupujących, natychmiast umawiając się na wycieczkę z agentem RealN,
-            osobiście lub przez wideo-czat.
+          Aktualizujemy oferty co 5 minut, więc możesz wyprzedzić 
+innych kupujących, natychmiast umawiając się na wycieczkę 
+z agentem RealN, osobiście lub przez wideo-czat.
+
           </p>
           <img src={getit} alt="store img"></img>
         </aside>
@@ -69,15 +72,28 @@ const whybuy = () => {
       <article className="ready-holder">
         <img src={pic2} alt="home to buys"></img>
         <aside>
-          <h1>Gotowy do sprzedaży swojego obecnego domu?</h1>
+          <h1>Sprzedajesz swój stary dom lub mieszkanie?
+</h1>
+<h2>
+Mamy dla Ciebie propozycję..
+
+</h2>
           <p>
-            Dzięki spacerom 3D, wycieczkom wideo i cyfrowym kampaniom
-            marketingowym agenci RealN sprawią, że Twój dom zabłyśnie w sieci.
-            Dodatkowo, zapłacisz tylko 1% prowizji za wystawienie oferty, kiedy
-            kupujesz i sprzedajesz z nami.
+          Zapłacisz tylko 1% prowizji, kiedy kupujesz i sprzedajesz z nami.
           </p>
-          <Link to="/">Dowiedz się więcej</Link>
-        </aside>
+          <p>
+          Dzięki narzędziom takim jak:
+          </p>
+          <ul>
+            <li>spacery 3D</li>
+            <li>
+              prezentacje live, wideo
+            </li>
+            <li>
+              cyfrowe kampanie marketingowe
+            </li>
+          </ul>
+<h1>Jesteśmy skuteczni</h1>   </aside>
       </article>
     </>
   );
