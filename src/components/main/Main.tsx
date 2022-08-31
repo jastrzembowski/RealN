@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import pic2 from "../../images/pic4.jpg";
 import pic5 from "../../images/pic5.jpg";
-import SmallContact from "../utils/SmallContact"
+import SmallContact from "../utils/SmallContact";
 const Main = () => {
   const [isBuyActive, setIsBuyActive] = useState(true);
   const [isLendActive, setIsLendActive] = useState(false);
@@ -99,7 +99,7 @@ const Main = () => {
           <img src={pic5} alt="home for rent"></img>
         </article>
       </article>
-              <SmallContact/>
+      <SmallContact />
     </>
   );
 };

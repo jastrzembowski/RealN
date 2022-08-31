@@ -21,7 +21,7 @@ const Nav = () => {
             <Link to="/why-buy" className="buy-drop4">Kup z RealN</Link>
             <h3 className="header3">Środki na zakupy</h3>
             <Link to="/can-i-afford" className="buy-drop5">Sprawdź budżet</Link>
-            <Link to="/buying-guide" className="buy-drop6">Przewodnik kupna domu</Link>
+            <Link to="/guides" className="buy-drop6">Przewodnik kupna domu</Link>
             <Link to="/find-lender" className="buy-drop7">Szukaj agenta pożyczkowego</Link>
             <Link to="/find-agent" className="buy-drop8">Szukaj rzeczoznawcę nieruchomości</Link>
             <Link to="/find-events" className="buy-drop9">Szukaj warsztaty i eventy</Link>
