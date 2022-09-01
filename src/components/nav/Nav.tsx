@@ -28,6 +28,7 @@ const Nav = () => {
             <Link to="/housing-market" className="buy-drop10">Przegląd rynku mieszkaniowego w Polsce</Link>
           </div>
         )}
+        <li>Sprzedaż</li>
         <li>Wynajem</li>
         <li>Kontakt</li>
         <ul className="nav-login-bar">

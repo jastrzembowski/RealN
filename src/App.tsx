@@ -10,6 +10,8 @@ import WhyBuy from "./components/buy/whybuy/WhyBuy";
 import CanIAfford from "./components/resources/caniafford/CanIAfford";
 import BuyGuide from "./components/resources/buyguide/BuyGuide";
 import BuyInSteps from "./components/resources/buyguide/guides/BuyInSteps";
+import ChooseAgent from "./components/resources/buyguide/guides/ChooseAgent";
+import Commision from "./components/resources/buyguide/guides/Commision";
 import FindLender from "./components/resources/findlender/FindLender";
 import FindAgent from "./components/resources/findagent/FindAgent";
 import FindEvents from "./components/resources/findevents/FindEvents";
@@ -40,6 +42,8 @@ const App = () => {
         <Route path="/can-i-afford" element={<CanIAfford />} />
         <Route path="/guides" element={<BuyGuide />} />
         <Route path="/guides/how-to-buy-a-house" element={<BuyInSteps/>}/>
+        <Route path="/guides/how-to-choose-real-estate-agent" element={<ChooseAgent/>}/>
+        <Route path="/guides/real-estate-commision" element={<Commision/>}/>
         <Route path="find-lender" element={<FindLender />} />
         <Route path="/find-agent" element={<FindAgent />} />
         <Route path="/find-events" element={<FindEvents />} />

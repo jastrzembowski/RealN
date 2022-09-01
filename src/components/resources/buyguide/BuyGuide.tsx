@@ -48,21 +48,27 @@ const BuyGuide = () => {
             </Link>{" "}
           </div>
           <div className="box2">
+            <a href="https://www.biznes.gov.pl/pl/opisy-procedur/-/proc/209">
             <img src={foreign} alt="foreigner buy"></img>
             <h3>Jak kupić nieruchomość w Polsce nie będąc obywatelem Polski</h3>
-            <h4>Czytaj dalej</h4>
+            <h4>Czytaj dalej</h4></a>
           </div>
           <div className="box3">
-            <img src={choose} alt="choose agent"></img>
-            <h3>
-              Jak wybrać agenta nieruchomości - Top 15 pytań, które należy zadać
-            </h3>
-            <h4>Czytaj dalej</h4>
+            <Link to="/guides/how-to-choose-real-estate-agent">
+              <img src={choose} alt="choose agent"></img>
+              <h3>
+                Jak wybrać agenta nieruchomości - Top 15 pytań, które należy
+                zadać
+              </h3>
+              <h4>Czytaj dalej</h4>
+            </Link>
           </div>
           <div className="box4">
-            <img src={costs} alt="agent costs"></img>
-            <h3>O prowizji agenta nieruchomości</h3>
-            <h4>Czytaj dalej</h4>
+            <Link to="/guides/real-estate-commision">
+              <img src={costs} alt="agent costs"></img>
+              <h3>O prowizji agenta nieruchomości</h3>
+              <h4>Czytaj dalej</h4>
+            </Link>
           </div>
         </article>
       )}
