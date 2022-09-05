@@ -12,6 +12,40 @@ const CanIAfford = () => {
             Zobacz na co możesz sobie pozwolić. Znajdź dom / mieszkanie w swoim
             budżecie.
           </h3>
+          <article className="calculator-box">
+            <form className="calculator-data">
+              <h3>Przychody i koszty Twojego gospodartwa domowego</h3>
+              <h4>Dochód netto</h4>
+              <input type="number"></input>
+              <p>Kwota na rękę bez podatku</p>
+              <h4>Suma rat innych kredytów</h4>
+              <input type="number"></input>
+              <p>Pole nieobowiązkowe</p>
+              <h4>Suma kosztów utrzymania</h4>
+              <input type="number"></input>
+              <p>Np. czynsz zakupy</p>
+
+              <h3>Planowany kredyt hipoteczny</h3>
+              <h4>Okres spłaty</h4>
+              <input type="number" ></input>
+              <h4>Oprocentowanie</h4>
+              <input type="number"></input>
+
+              <button type="submit">
+                Oblicz
+              </button>
+            </form>
+            <aside className="calculator">
+              <h2>
+                Twoja zdolność kredytowa
+              </h2>
+              <h1>300,000 zł</h1>
+              <p>Kwota kredytu</p>
+              <h3>2500 zł</h3>
+              <p>Wysokość raty kredytu</p>
+            </aside>
+          </article>
+
           <p>
             Dzięki naszemu kalkulatorowi pomożemy Ci w prosty sposób określić
             Twój budżet związany z zakupem oraz utrzymaniem nieruchomości.
