@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./main.scss";
+import EstateSlider from "../utils/EstateSlider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import pic2 from "../../images/pic4.jpg";
@@ -98,7 +99,14 @@ const Main = () => {
           </aside>
           <img src={pic5} alt="home for rent"></img>
         </article>
+        
       </article>
+      <article className="slider-title">
+
+       <h1> Sprawdź mieszkania w okolicy:</h1>
+      </article>
+      <EstateSlider/>
+
       <SmallContact />
     </>
   );

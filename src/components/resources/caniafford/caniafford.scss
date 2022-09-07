@@ -20,6 +20,7 @@
 .calculator-box {
   display: flex;
   flex-direction: row;
+  height: auto;
   margin: 60px 0px;
   h3 {
     color: $dark-gray;
@@ -30,13 +31,11 @@
     padding: 50px;
     display: flex;
     flex-direction: column;
-    -webkit-box-shadow: 7px 8px 28px -14px rgba(66, 68, 90, 1);
-    -moz-box-shadow: 7px 8px 28px -14px rgba(66, 68, 90, 1);
-    box-shadow: 7px 8px 28px -14px rgba(66, 68, 90, 1);
-    p{
-        font-size: 9px;
-        color: $dark-gray;
-        margin-top: 4px;
+
+    p {
+      font-size: 9px;
+      color: $dark-gray;
+      margin-top: 4px;
     }
     h4 {
       font-size: 13px;
@@ -59,18 +58,34 @@
       border-radius: 5px;
       font-size: 14px;
       font-weight: 600;
+      transition: 0.2s ease-in-out;
       color: white;
       cursor: pointer;
+      &:hover{
+        background-color: $blue;
+      }
     }
   }
   .calculator {
     width: 50%;
-    padding: 50px;
+    padding: 50px 20px;
     display: flex;
+    height: 350px;
     flex-direction: column;
+    position: sticky;
+    top: 200px;
     text-align: center;
+    -webkit-box-shadow: 7px 8px 28px -14px rgba(66, 68, 90, 0.4);
+    -moz-box-shadow: 7px 8px 28px -14px rgba(66, 68, 90, 0.4);
+    box-shadow: 7px 8px 28px -14px rgba(66, 68, 90, 0.4);
+    h2 {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: $dark-gray;
+    }
     h1 {
       font-size: 40px;
+      margin-top: 5px;
       margin-bottom: 5px;
     }
     h3 {

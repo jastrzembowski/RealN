@@ -1,3 +1,4 @@
+
 $blue: rgba(7, 7, 81, 1);
 $light-blue: rgb(67,150,202);
 $dark-blue: rgba(6, 6, 58, 1);
@@ -7,7 +8,10 @@ $mid-gray: rgba(197, 197, 197, 0.8);
 
 body {
     margin: 0px;
+}
+*{
     font-family: Verdana, Geneva, Tahoma, sans-serif
+
 }
 .text-bold{
     font-weight: 700;

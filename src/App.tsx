@@ -1,4 +1,6 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation} from "react-router-dom";
+import "./App.css";
+
 import Nav from "./components/nav/Nav";
 import Footer from "./components/utils/Footer";
 import Nav2 from "./components/nav/Nav2";
@@ -16,7 +18,6 @@ import FindLender from "./components/resources/findlender/FindLender";
 import FindAgent from "./components/resources/findagent/FindAgent";
 import FindEvents from "./components/resources/findevents/FindEvents";
 import HouseMarket from "./components/resources/housemarket/HouseMarket";
-import { useLocation } from "react-router-dom";
 
 const App = () => {
   let nav;

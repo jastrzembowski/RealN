@@ -1,7 +1,49 @@
-import React from "react";
 import "./caniafford.scss";
+import { useState } from "react";
 
 const CanIAfford = () => {
+  const [dochod, setDochod] = useState("3000");
+  const [dodatki, setDodatki] = useState("0");
+  const [koszty, setKoszty] = useState("0");
+  const [okres, setOkres] = useState("1");
+  const [oprocentowanie, setOprocentowanie] = useState("9.21");
+  let [rata, setRata] = useState(1000);
+  let [q, setQ] = useState(1);
+  const [prowizja, setProwizja] = useState(10);
+
+  q = 1 + prowizja / 1200;
+
+  const handleDochodChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setDochod(event.target.value);
+  };
+  const handleDodatkiChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setDodatki(event.target.value);
+  };
+
+  const handleKosztyChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setKoszty(event.target.value);
+  };
+
+  const handleOkresChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setOkres(event.target.value);
+  };
+
+  const handleProcentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setOprocentowanie(event.target.value);
+  };
+
+  if (+dodatki + +koszty > +dochod / 2 - 0.05 * +dochod) {
+    rata = +dochod / 2 - 0.05 * +dochod;
+  } else {
+    rata = (+dochod / 2 - 0.05 * +dochod) - +dodatki - +koszty;
+  }
+
+  let x: number = Math.pow(q, 12);
+  let kapital: number = Math.round(
+    rata / (x * ((q - 1) / (q ** (12 * +okres) - 1)))
+  );
+
+  console.log(kapital);
   return (
     <>
       <div className="afford-nav"></div>
@@ -16,32 +58,54 @@ const CanIAfford = () => {
             <form className="calculator-data">
               <h3>Przychody i koszty Twojego gospodartwa domowego</h3>
               <h4>Dochód netto</h4>
-              <input type="number"></input>
+              <input
+              type="currency"
+                required
+                data-type="currency"
+                value= {dochod}
+                onChange={handleDochodChange}
+              />
               <p>Kwota na rękę bez podatku</p>
               <h4>Suma rat innych kredytów</h4>
-              <input type="number"></input>
+              <input
+                type="string"
+                value={dodatki}
+                onChange={handleDodatkiChange}
+              />
               <p>Pole nieobowiązkowe</p>
               <h4>Suma kosztów utrzymania</h4>
-              <input type="number"></input>
+              <input
+                type="number"
+                required
+                value={koszty}
+                onChange={handleKosztyChange}
+              />
               <p>Np. czynsz zakupy</p>
 
               <h3>Planowany kredyt hipoteczny</h3>
               <h4>Okres spłaty</h4>
-              <input type="number" ></input>
+              <input
+                type="number"
+                required
+                value={okres}
+                onChange={handleOkresChange}
+              />
               <h4>Oprocentowanie</h4>
-              <input type="number"></input>
-
-              <button type="submit">
+              <input
+                type="number"
+                required
+                value={oprocentowanie}
+                onChange={handleProcentChange}
+              />
+              <button type="submit" value="Oblicz">
                 Oblicz
               </button>
             </form>
             <aside className="calculator">
-              <h2>
-                Twoja zdolność kredytowa
-              </h2>
-              <h1>300,000 zł</h1>
+              <h2>Twoja zdolność kredytowa</h2>
+              <h1>{kapital} zł</h1>
               <p>Kwota kredytu</p>
-              <h3>2500 zł</h3>
+              <h3>{rata} zł</h3>
               <p>Wysokość raty kredytu</p>
             </aside>
           </article>
