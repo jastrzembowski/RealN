@@ -7,9 +7,9 @@ const CanIAfford = () => {
   const [koszty, setKoszty] = useState("0");
   const [okres, setOkres] = useState("1");
   const [oprocentowanie, setOprocentowanie] = useState("9.21");
-  let [rata, setRata] = useState(1000);
-  let [q, setQ] = useState(1);
-  const [prowizja, setProwizja] = useState(10);
+  let [rata] = useState(1000);
+  let [q] = useState(1);
+  const [prowizja] = useState(10);
 
   q = 1 + prowizja / 1200;
 
