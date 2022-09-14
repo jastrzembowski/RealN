@@ -1,0 +1,35 @@
+@import "../../../index.scss";
+
+
+.buy-or-rent-header{
+    margin-top: 60px;
+    width: 100%;
+    height: 400px;
+    background-image: url("../../../images/sellrentbg.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    h1{
+        font-size: 40px;
+        background-color: rgba($color: #FFF, $alpha: 0.6);
+        width: fit-content;
+        margin: auto;
+        padding: 70px 120px;
+    }
+    
+}
+
+.buyorrent-box{
+    padding: 60px;
+    margin: 0px 30%;
+    text-align: justify;
+    h1{
+        font-size: 32px;
+    }
+    p{
+        font-size: 14px;
+    }
+}

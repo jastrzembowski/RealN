@@ -1,16 +1,34 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import guide from "../../../images/icons/guide.png";
 import costs from "../../../images/icons/costs.png";
 import foreign from "../../../images/icons/foreign.png";
 import steps from "../../../images/icons/steps.png";
 import choose from "../../../images/icons/choose.png";
-
 import "./buyguide.scss";
+import { useParams } from "react-router-dom";
 
-const BuyGuide = () => {
-  const [isBuy, setIsBuy] = useState(true);
+export default function BuyGuide() {
+  const { isBuyProps }: any = useParams();
+  let y: String = JSON.stringify(isBuyProps);
+  let [isBuy, setIsBuy] = useState<boolean>();
+  console.log("🚀 ~ file: BuyGuide.tsx ~ line 15 ~ BuyGuide ~ y", y)
 
+  // const setBuyState = () => {
+  //   setIsBuy(y);
+  // }
+
+  // const setSellState = () => {
+  //   setIsBuy(y);
+  // }
+
+  useEffect(() => {
+    setIsBuy(y == `"buy"` ? true : false);
+  }, [y])
+
+
+  console.log(isBuy);
+  console.log(y)
   return (
     <>
       <header className="guide-header">
@@ -26,19 +44,19 @@ const BuyGuide = () => {
       </header>
       <article className="guide-subject-choice">
         <p
-          onClick={(e) => setIsBuy(true)}
-          className={isBuy ? "choice-active" : " "}
+          onClick={() => {setIsBuy(true)}}
+          className={isBuy == true ? "choice-active" : " "}
         >
           Przewodnik zakupu nieruchomości
         </p>
         <p
-          onClick={(e) => setIsBuy(false)}
-          className={!isBuy ? "choice-active" : " "}
+          onClick={() => {setIsBuy(false)}}
+          className={isBuy == false ? "choice-active" : " "}
         >
           Przewodnik sprzedaży nieruchomości
         </p>
       </article>
-      {isBuy && (
+      {y == `"buy"` || isBuy == true ? (
         <article className="buy-guide">
           <div className="box1">
             <Link to="/guides/how-to-buy-a-house">
@@ -49,9 +67,12 @@ const BuyGuide = () => {
           </div>
           <div className="box2">
             <a href="https://www.biznes.gov.pl/pl/opisy-procedur/-/proc/209">
-            <img src={foreign} alt="foreigner buy"></img>
-            <h3>Jak kupić nieruchomość w Polsce nie będąc obywatelem Polski</h3>
-            <h4>Czytaj dalej</h4></a>
+              <img src={foreign} alt="foreigner buy"></img>
+              <h3>
+                Jak kupić nieruchomość w Polsce nie będąc obywatelem Polski
+              </h3>
+              <h4>Czytaj dalej</h4>
+            </a>
           </div>
           <div className="box3">
             <Link to="/guides/how-to-choose-real-estate-agent">
@@ -71,8 +92,8 @@ const BuyGuide = () => {
             </Link>
           </div>
         </article>
-      )}
-      {!isBuy && (
+      )
+      : (
         <article className="buy-guide">
           <div className="box1">
             <img src={steps} alt="steps"></img>
@@ -99,9 +120,7 @@ const BuyGuide = () => {
             <h4>Czytaj dalej</h4>
           </div>
         </article>
-      )}
+    )}
     </>
   );
-};
-
-export default BuyGuide;
+}

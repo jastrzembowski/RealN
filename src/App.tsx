@@ -18,7 +18,17 @@ import FindLender from "./components/resources/findlender/FindLender";
 import FindAgent from "./components/resources/findagent/FindAgent";
 import FindEvents from "./components/resources/findevents/FindEvents";
 import HouseMarket from "./components/resources/housemarket/HouseMarket";
-
+import SellHouse from "./components/sell/sellhouse/SellHouse";
+import SellWorth from "./components/sell/sellworth/SellWorth";
+import SellDashboard from "./components/sell/selldashboard/SellDashboard";
+import PayOff from "./components/sell/payoff/Payoff";
+import SellGuide from "./components/sell/sellguide/SellGuide";
+import HomeImprovement from "./components/sell/homeimprovement/HomeImprovement";
+import RentGuide from "./components/rent/rentguide/RentGuide";
+import BuyOrRent from "./components/rent/buyorrent/BuyOrRent";
+import RentTrends from "./components/rent/renttrends/RentTrends";
+import TipsForRenters from "./components/rent/tipsforrenters/TipsForRenters"
+import Contact from "./components/utils/Contact";
 const App = () => {
   let nav;
   const location = useLocation();
@@ -41,7 +51,7 @@ const App = () => {
         <Route path="/land-nearby" element={<LandNearby />} />
         <Route path="/why-buy" element={<WhyBuy />} />
         <Route path="/can-i-afford" element={<CanIAfford />} />
-        <Route path="/guides" element={<BuyGuide />} />
+        <Route path="/guides/:isBuyProps" element={<BuyGuide />} />
         <Route path="/guides/how-to-buy-a-house" element={<BuyInSteps/>}/>
         <Route path="/guides/how-to-choose-real-estate-agent" element={<ChooseAgent/>}/>
         <Route path="/guides/real-estate-commision" element={<Commision/>}/>
@@ -49,6 +59,18 @@ const App = () => {
         <Route path="/find-agent" element={<FindAgent />} />
         <Route path="/find-events" element={<FindEvents />} />
         <Route path="/housing-market" element={<HouseMarket />} />
+
+        <Route path="/sell" element={<SellHouse/>} />
+        <Route path="/sell/how-much-is-it-worth" element={<SellWorth />} />
+        <Route path="/sell/dashboard" element={<SellDashboard />} />
+        <Route path="/guides/will-selling-pay-off" element={<PayOff />} />
+        <Route path="/guide/how-to-sell-a-house" element={<SellGuide />} />
+        <Route path="/guides/home-improvement" element={<HomeImprovement />} />
+        <Route path="/guides/how-to-rent-a-house" element={<RentGuide />} />
+        <Route path="/guides/buy-or-rent" element={<BuyOrRent />} />
+        <Route path="/guides/rent-trends"  element={<RentTrends />} />
+        <Route path="/guides/tips-for-renters" element={<TipsForRenters />} />
+        <Route path="/contact" element={<Contact/>}/>
       </Routes>
       <Footer/>
     </>
