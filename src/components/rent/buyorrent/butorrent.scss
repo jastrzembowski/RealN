@@ -14,7 +14,8 @@
     text-align: center;
     h1{
         font-size: 40px;
-        background-color: rgba($color: #FFF, $alpha: 0.6);
+        color: $dark-gray;
+        background-color: rgba($color: #FFF, $alpha: 0.9);
         width: fit-content;
         margin: auto;
         padding: 70px 120px;
