@@ -20,7 +20,7 @@ const Nav = (props: any) => {
         </Link>
 
         <input type="text" placeholder="Miasto, adres, kod pocztowy"></input>
-        <FontAwesomeIcon icon={faMagnifyingGlass} className="nav-glass-icon" />
+        <Link to ="/search"><FontAwesomeIcon icon={faMagnifyingGlass} className="nav-glass-icon" /></Link>
       </aside>
       <ul className="nav-bar2">
         <li>500-000-000</li>

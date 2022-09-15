@@ -1,7 +1,7 @@
 import "../housenearby/housenearby.scss";
 import homebg from "../../../images/icons/homebg.png";
 import EstateSlider from "../../utils/EstateSlider";
-
+import { Link } from "react-router-dom";
 const HouseNearby = () => {
   return (
     <>
@@ -25,7 +25,7 @@ const HouseNearby = () => {
           <input type="number" placeholder="Cena minimalna"></input>
           <input type="number" placeholder="Cena maksymalna"></input>
         </div>
-        <button type="button"> Szukaj</button>
+       <Link to ="/search">  <button type="button"> Szukaj</button></Link>
       </article>
       <article className="houses-container">
         <h1>Mieszkania w Gdańsku</h1>

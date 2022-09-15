@@ -29,6 +29,9 @@ import BuyOrRent from "./components/rent/buyorrent/BuyOrRent";
 import RentTrends from "./components/rent/renttrends/RentTrends";
 import TipsForRenters from "./components/rent/tipsforrenters/TipsForRenters"
 import Contact from "./components/utils/Contact";
+import Searchpage from "./components/buy/searchpage/Searchpage";
+import PropertyDetails from "./components/buy/propertyDetails/PropertyDetails";
+
 const App = () => {
   let nav;
   const location = useLocation();
@@ -46,6 +49,7 @@ const App = () => {
       {nav}
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/search/:id" element={<PropertyDetails />} />
         <Route path="/house-nearby" element={<HouseNearby />} />
         <Route path="/home-nearby" element={<HomeNearby />} />
         <Route path="/land-nearby" element={<LandNearby />} />
@@ -59,7 +63,7 @@ const App = () => {
         <Route path="/find-agent" element={<FindAgent />} />
         <Route path="/find-events" element={<FindEvents />} />
         <Route path="/housing-market" element={<HouseMarket />} />
-
+        <Route path="/search" element={<Searchpage/>}/>
         <Route path="/sell" element={<SellHouse/>} />
         <Route path="/sell/how-much-is-it-worth" element={<SellWorth />} />
         <Route path="/sell/dashboard" element={<SellDashboard />} />

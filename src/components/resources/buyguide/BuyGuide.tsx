@@ -9,26 +9,14 @@ import "./buyguide.scss";
 import { useParams } from "react-router-dom";
 
 export default function BuyGuide() {
+  
   const { isBuyProps }: any = useParams();
   let y: String = JSON.stringify(isBuyProps);
   let [isBuy, setIsBuy] = useState<boolean>();
-  console.log("🚀 ~ file: BuyGuide.tsx ~ line 15 ~ BuyGuide ~ y", y)
-
-  // const setBuyState = () => {
-  //   setIsBuy(y);
-  // }
-
-  // const setSellState = () => {
-  //   setIsBuy(y);
-  // }
-
   useEffect(() => {
     setIsBuy(y == `"buy"` ? true : false);
   }, [y])
 
-
-  console.log(isBuy);
-  console.log(y)
   return (
     <>
       <header className="guide-header">
