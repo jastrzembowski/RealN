@@ -31,6 +31,7 @@ import TipsForRenters from "./components/rent/tipsforrenters/TipsForRenters"
 import Contact from "./components/utils/Contact";
 import Searchpage from "./components/buy/searchpage/Searchpage";
 import PropertyDetails from "./components/buy/propertyDetails/PropertyDetails";
+import UpcomingEvents from "./components/resources/findevents/upcomingevents/UpcomingEvents"
 
 const App = () => {
   let nav;
@@ -65,6 +66,7 @@ const App = () => {
         <Route path="/housing-market" element={<HouseMarket />} />
         <Route path="/search" element={<Searchpage/>}/>
         <Route path="/sell" element={<SellHouse/>} />
+        <Route path="/upcoming-events" element={<UpcomingEvents/>}></Route>
         <Route path="/sell/how-much-is-it-worth" element={<SellWorth />} />
         <Route path="/sell/dashboard" element={<SellDashboard />} />
         <Route path="/guides/will-selling-pay-off" element={<PayOff />} />

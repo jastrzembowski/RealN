@@ -22,9 +22,10 @@ const HouseNearby = () => {
         </div>
         <div className="search-price">
           <p>Zakres cenowy</p>
+          <div className="price-box"> 
           <input type="number" placeholder="Cena minimalna"></input>
           <input type="number" placeholder="Cena maksymalna"></input>
-        </div>
+        </div></div>
        <Link to ="/search">  <button type="button"> Szukaj</button></Link>
       </article>
       <article className="houses-container">

@@ -1,5 +1,6 @@
 import React from "react";
 import "./slider.scss";
+import { Link } from "react-router-dom";
 
 export default function Offer(props: any) {
   return (
@@ -27,8 +28,9 @@ export default function Offer(props: any) {
         <div className="details-box flex">
           <p className="price">{props.offer.price} zł</p>
 
-          <button className="btn">SZCZEGÓŁY</button>
-        </div>
+          <Link to={`/search/${props.offer.id}`}>
+        <button className="btn">SZCZEGÓŁY</button>
+      </Link>        </div>
       </div>
     </div>
   );

@@ -19,7 +19,6 @@
   }
   img {
     width: 40%;
-    height: fit-content;
   }
 }
 
@@ -63,3 +62,26 @@
   }
   border-bottom: 1px solid $gray;
 }
+
+
+.search-bar {
+  height: 100px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  .search-location,
+  .search-price {
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    p {
+      font-size: 10px;
+      color: $dark-gray;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 300px;
+      height: 40px;
+      border: solid 1px $gray;
+    }
+  }}

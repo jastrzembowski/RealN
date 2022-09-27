@@ -8,10 +8,9 @@ const CanIAfford = () => {
   const [okres, setOkres] = useState("1");
   const [oprocentowanie, setOprocentowanie] = useState("9.21");
   let [rata] = useState(1000);
-  let [q] = useState(1);
-  const [prowizja] = useState(10);
-
-  q = 1 + prowizja / 1200;
+  const [q, setQ] = useState(0)
+const [t, setT] = useState(0)
+ const [kapital, setKapital] = useState(0)
 
   const handleDochodChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setDochod(event.target.value);
@@ -32,18 +31,18 @@ const CanIAfford = () => {
     setOprocentowanie(event.target.value);
   };
 
-  if (+dodatki + +koszty > +dochod / 2 - 0.05 * +dochod) {
-    rata = +dochod / 2 - 0.05 * +dochod;
-  } else {
-    rata = (+dochod / 2 - 0.05 * +dochod) - +dodatki - +koszty;
-  }
-
-  let x: number = Math.pow(q, 12);
-  let kapital: number = Math.round(
-    rata / (x * ((q - 1) / (q ** (12 * +okres) - 1)))
-  );
-
-  console.log(kapital);
+  const count = (e: any, oprocentowanie: number) => {
+    e.preventDefault();
+    if (+koszty === 0) {
+      setKoszty("1200");
+    }
+    if ((+dochod - +koszty) / 2 - +dodatki < 0) {
+      rata = 0;
+    } else rata = (+dochod - +koszty) / 2 - +dodatki;
+    setQ((oprocentowanie * 0.01) / 12 + 1)
+    setT(+okres * 12)
+    setKapital(Math.round(rata / (q ** t * ((q - 1) / (q ** t - 1)))))
+  };
   return (
     <>
       <div className="afford-nav"></div>
@@ -59,10 +58,10 @@ const CanIAfford = () => {
               <h3>Przychody i koszty Twojego gospodartwa domowego</h3>
               <h4>Dochód netto</h4>
               <input
-              type="currency"
+                type="currency"
                 required
                 data-type="currency"
-                value= {dochod}
+                value={dochod}
                 onChange={handleDochodChange}
               />
               <p>Kwota na rękę bez podatku</p>
@@ -90,6 +89,7 @@ const CanIAfford = () => {
                 value={okres}
                 onChange={handleOkresChange}
               />
+              <p>Na ile lat chcesz wziąć kredyt?</p>
               <h4>Oprocentowanie</h4>
               <input
                 type="number"
@@ -97,7 +97,8 @@ const CanIAfford = () => {
                 value={oprocentowanie}
                 onChange={handleProcentChange}
               />
-              <button type="submit" value="Oblicz">
+              <p>Oprocentowanie kredytu w skali roku</p>
+              <button  value="Oblicz" onSubmit={(e: any) => count}>
                 Oblicz
               </button>
             </form>
@@ -113,7 +114,7 @@ const CanIAfford = () => {
           <p>
             Dzięki naszemu kalkulatorowi pomożemy Ci w prosty sposób określić
             Twój budżet związany z zakupem oraz utrzymaniem nieruchomości.
-            Miesięczna rata nie powinna przekraczać 35% miesięcznych dochodów
+            Miesięczna rata nie powinna przekraczać 50% miesięcznych dochodów
             netto gospodarstwa domowego.
           </p>
           <p>
