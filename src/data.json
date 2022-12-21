@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Gdańsk, , 80.38 m², 3 pokoje",
-    "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
+    "title": "Mieszkanie 55m2 bez czynszu",
+    "subtitle": "Inwestycyjne mieszkanie z widokiem na Marinę",
     "img": [
       {
         "url": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
@@ -14,6 +14,11 @@
         "url": "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "id": 2,
         "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
       }
     ],
     "type": "Dom",
@@ -22,10 +27,28 @@
     "transactionType": "Wynajem",
     "rooms": 4,
     "area": 80,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
     "price": 160000,
+    "price-m" : 3618,
     "year": 2011,
     "offer": "RS61782836",
     "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
     "features": [
       "Blisko morza",
       "Widok",
@@ -37,7 +60,7 @@
       "Wysoki standart budynku"
     ],
     "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
-    "description": "Znajdujący się na kameralnej inwestycji w Gdyni Orłowie, w niewielkiej odległości od plaży, zaledwie 5 minut spacerem od Trójmiejskiego Parku Krajobrazowego.",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
     "agent": {
       "name": "John Doe",
       "agency": "Real Estate Agency",
@@ -48,7 +71,7 @@
   },
   {
     "id": 2,
-    "title": "Gdańsk, , 80.38 m², 3 pokoje",
+    "title": "Dom przy Gubałówce / Lider House Deweloper / 78m2",
     "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
     "img": [
       {
@@ -60,18 +83,41 @@
         "url": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
         "id": 2,
         "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
       }
     ],
-    "type": "Działka",
-    "city": "Gdańsk",
+    "type": "Dom",
+    "city": "Sopot",
     "distriction": "Morena",
-    "transactionType": "Sprzedaż",
+    "transactionType": "Wynajem",
     "rooms": 4,
     "area": 80,
-    "price": 200000,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
     "year": 2011,
     "offer": "RS61782836",
     "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
     "features": [
       "Blisko morza",
       "Widok",
@@ -82,7 +128,8 @@
       "Taras",
       "Wysoki standart budynku"
     ],
-    "description": "Jedyny obecnie w sprzedaży trzypokojowy wykończony apartament składający się z dwóch sypialni, przestronnego salonu z aneksem kuchennym, łazienki oraz garderoby o powierzchni 80,38 m2 z widokiem na zieleń Parku im. Ronalda Reagana patrzący w stronę morza oraz zielone prywatne patio. Usytuowany na siódmym piętrze luksusowej inwestycji Tarasy Bałtyku, zlokalizowanej w pierwszej linii zabudowy od morza",
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
     "agent": {
       "name": "John Doe",
       "agency": "Real Estate Agency",
@@ -93,7 +140,7 @@
   },
   {
     "id": 3,
-    "title": "Gdańsk, , 80.38 m², 3 pokoje",
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
     "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
     "img": [
       {
@@ -107,18 +154,41 @@
 
         "id": 2,
         "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
       }
     ],
-    "type": "Mieszkanie",
-    "city": "Gdynia",
+    "type": "Dom",
+    "city": "Sopot",
     "distriction": "Morena",
     "transactionType": "Wynajem",
     "rooms": 4,
     "area": 80,
-    "price": 180000,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
     "year": 2011,
     "offer": "RS61782836",
     "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
     "features": [
       "Blisko morza",
       "Widok",
@@ -129,7 +199,8 @@
       "Taras",
       "Wysoki standart budynku"
     ],
-    "description": "Jedyny obecnie w sprzedaży trzypokojowy wykończony apartament składający się z dwóch sypialni, przestronnego salonu z aneksem kuchennym, łazienki oraz garderoby o powierzchni 80,38 m2 z widokiem na zieleń Parku im. Ronalda Reagana patrzący w stronę morza oraz zielone prywatne patio. Usytuowany na siódmym piętrze luksusowej inwestycji Tarasy Bałtyku, zlokalizowanej w pierwszej linii zabudowy od morza",
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
     "agent": {
       "name": "John Doe",
       "agency": "Real Estate Agency",
@@ -140,7 +211,7 @@
   },
   {
     "id": 4,
-    "title": "Gdańsk, , 80.38 m², 3 pokoje",
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
     "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
     "img": [
       {
@@ -153,18 +224,41 @@
         "url": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
         "id": 2,
         "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
       }
     ],
     "type": "Dom",
-    "city": "Gdańsk",
+    "city": "Sopot",
     "distriction": "Morena",
-    "transactionType": "Sprzedaż",
+    "transactionType": "Wynajem",
     "rooms": 4,
     "area": 80,
-    "price": 170000,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
     "year": 2011,
     "offer": "RS61782836",
     "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
     "features": [
       "Blisko morza",
       "Widok",
@@ -175,7 +269,8 @@
       "Taras",
       "Wysoki standart budynku"
     ],
-    "description": "Jedyny obecnie w sprzedaży trzypokojowy wykończony apartament składający się z dwóch sypialni, przestronnego salonu z aneksem kuchennym, łazienki oraz garderoby o powierzchni 80,38 m2 z widokiem na zieleń Parku im. Ronalda Reagana patrzący w stronę morza oraz zielone prywatne patio. Usytuowany na siódmym piętrze luksusowej inwestycji Tarasy Bałtyku, zlokalizowanej w pierwszej linii zabudowy od morza",
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
     "agent": {
       "name": "John Doe",
       "agency": "Real Estate Agency",
@@ -186,7 +281,7 @@
   },
   {
     "id": 5,
-    "title": "Gdańsk, , 80.38 m², 3 pokoje",
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
     "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
     "img": [
       {
@@ -199,6 +294,11 @@
         "url": "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "id": 2,
         "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
       }
     ],
     "type": "Dom",
@@ -207,10 +307,28 @@
     "transactionType": "Wynajem",
     "rooms": 4,
     "area": 80,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
     "price": 160000,
+    "price-m" : 3618,
     "year": 2011,
     "offer": "RS61782836",
     "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
     "features": [
       "Blisko morza",
       "Widok",
@@ -222,7 +340,7 @@
       "Wysoki standart budynku"
     ],
     "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
-    "description": "Znajdujący się na kameralnej inwestycji w Gdyni Orłowie, w niewielkiej odległości od plaży, zaledwie 5 minut spacerem od Trójmiejskiego Parku Krajobrazowego.",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
     "agent": {
       "name": "John Doe",
       "agency": "Real Estate Agency",
@@ -233,7 +351,7 @@
   },
   {
     "id": 6,
-    "title": "Gdańsk, , 80.38 m², 3 pokoje",
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
     "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
     "img": [
       {
@@ -245,18 +363,41 @@
         "url": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
         "id": 2,
         "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
       }
     ],
-    "type": "Działka",
-    "city": "Gdańsk",
+    "type": "Dom",
+    "city": "Sopot",
     "distriction": "Morena",
-    "transactionType": "Sprzedaż",
+    "transactionType": "Wynajem",
     "rooms": 4,
     "area": 80,
-    "price": 150000,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
     "year": 2011,
     "offer": "RS61782836",
     "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
     "features": [
       "Blisko morza",
       "Widok",
@@ -267,7 +408,8 @@
       "Taras",
       "Wysoki standart budynku"
     ],
-    "description": "Jedyny obecnie w sprzedaży trzypokojowy wykończony apartament składający się z dwóch sypialni, przestronnego salonu z aneksem kuchennym, łazienki oraz garderoby o powierzchni 80,38 m2 z widokiem na zieleń Parku im. Ronalda Reagana patrzący w stronę morza oraz zielone prywatne patio. Usytuowany na siódmym piętrze luksusowej inwestycji Tarasy Bałtyku, zlokalizowanej w pierwszej linii zabudowy od morza",
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
     "agent": {
       "name": "John Doe",
       "agency": "Real Estate Agency",
@@ -278,7 +420,7 @@
   },
   {
     "id": 7,
-    "title": "Gdańsk, , 80.38 m², 3 pokoje",
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
     "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
     "img": [
       {
@@ -292,18 +434,41 @@
 
         "id": 2,
         "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
       }
     ],
-    "type": "Mieszkanie",
-    "city": "Gdynia",
+    "type": "Dom",
+    "city": "Sopot",
     "distriction": "Morena",
     "transactionType": "Wynajem",
     "rooms": 4,
     "area": 80,
-    "price": 189000,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
     "year": 2011,
     "offer": "RS61782836",
     "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
     "features": [
       "Blisko morza",
       "Widok",
@@ -314,7 +479,8 @@
       "Taras",
       "Wysoki standart budynku"
     ],
-    "description": "Jedyny obecnie w sprzedaży trzypokojowy wykończony apartament składający się z dwóch sypialni, przestronnego salonu z aneksem kuchennym, łazienki oraz garderoby o powierzchni 80,38 m2 z widokiem na zieleń Parku im. Ronalda Reagana patrzący w stronę morza oraz zielone prywatne patio. Usytuowany na siódmym piętrze luksusowej inwestycji Tarasy Bałtyku, zlokalizowanej w pierwszej linii zabudowy od morza",
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
     "agent": {
       "name": "John Doe",
       "agency": "Real Estate Agency",
@@ -325,7 +491,7 @@
   },
   {
     "id": 8,
-    "title": "Gdańsk, , 80.38 m², 3 pokoje",
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
     "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
     "img": [
       {
@@ -339,18 +505,41 @@
 
         "id": 2,
         "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
       }
     ],
     "type": "Dom",
-    "city": "Gdańsk",
+    "city": "Sopot",
     "distriction": "Morena",
-    "transactionType": "Sprzedaż",
+    "transactionType": "Wynajem",
     "rooms": 4,
     "area": 80,
-    "price": 190000,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
     "year": 2011,
     "offer": "RS61782836",
     "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
     "features": [
       "Blisko morza",
       "Widok",
@@ -361,7 +550,8 @@
       "Taras",
       "Wysoki standart budynku"
     ],
-    "description": "Jedyny obecnie w sprzedaży trzypokojowy wykończony apartament składający się z dwóch sypialni, przestronnego salonu z aneksem kuchennym, łazienki oraz garderoby o powierzchni 80,38 m2 z widokiem na zieleń Parku im. Ronalda Reagana patrzący w stronę morza oraz zielone prywatne patio. Usytuowany na siódmym piętrze luksusowej inwestycji Tarasy Bałtyku, zlokalizowanej w pierwszej linii zabudowy od morza",
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
     "agent": {
       "name": "John Doe",
       "agency": "Real Estate Agency",
@@ -370,10 +560,9 @@
       "email": "johndoe@mail.com"
     }
   },
-
   {
     "id": 9,
-    "title": "Gdańsk, , 80.38 m², 3 pokoje",
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
     "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
     "img": [
       {
@@ -386,6 +575,11 @@
         "url": "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
         "id": 2,
         "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
       }
     ],
     "type": "Dom",
@@ -394,10 +588,28 @@
     "transactionType": "Wynajem",
     "rooms": 4,
     "area": 80,
-    "price": 200000,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
     "year": 2011,
     "offer": "RS61782836",
     "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
     "features": [
       "Blisko morza",
       "Widok",
@@ -409,7 +621,7 @@
       "Wysoki standart budynku"
     ],
     "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
-    "description": "Znajdujący się na kameralnej inwestycji w Gdyni Orłowie, w niewielkiej odległości od plaży, zaledwie 5 minut spacerem od Trójmiejskiego Parku Krajobrazowego.",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
     "agent": {
       "name": "John Doe",
       "agency": "Real Estate Agency",
@@ -420,7 +632,7 @@
   },
   {
     "id": 10,
-    "title": "Gdańsk, , 80.38 m², 3 pokoje",
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
     "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
     "img": [
       {
@@ -433,18 +645,41 @@
         "url": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
         "id": 2,
         "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
       }
     ],
-    "type": "Działka",
-    "city": "Gdańsk",
+    "type": "Dom",
+    "city": "Sopot",
     "distriction": "Morena",
-    "transactionType": "Sprzedaż",
+    "transactionType": "Wynajem",
     "rooms": 4,
     "area": 80,
-    "price": 210000,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
     "year": 2011,
     "offer": "RS61782836",
     "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
     "features": [
       "Blisko morza",
       "Widok",
@@ -455,7 +690,8 @@
       "Taras",
       "Wysoki standart budynku"
     ],
-    "description": "Jedyny obecnie w sprzedaży trzypokojowy wykończony apartament składający się z dwóch sypialni, przestronnego salonu z aneksem kuchennym, łazienki oraz garderoby o powierzchni 80,38 m2 z widokiem na zieleń Parku im. Ronalda Reagana patrzący w stronę morza oraz zielone prywatne patio. Usytuowany na siódmym piętrze luksusowej inwestycji Tarasy Bałtyku, zlokalizowanej w pierwszej linii zabudowy od morza",
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
     "agent": {
       "name": "John Doe",
       "agency": "Real Estate Agency",
@@ -466,7 +702,7 @@
   },
   {
     "id": 11,
-    "title": "Gdańsk, , 80.38 m², 3 pokoje",
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
     "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
     "img": [
       {
@@ -480,18 +716,41 @@
 
         "id": 2,
         "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
       }
     ],
-    "type": "Mieszkanie",
-    "city": "Gdynia",
+    "type": "Dom",
+    "city": "Sopot",
     "distriction": "Morena",
     "transactionType": "Wynajem",
     "rooms": 4,
     "area": 80,
-    "price": 190000,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
     "year": 2011,
     "offer": "RS61782836",
     "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
     "features": [
       "Blisko morza",
       "Widok",
@@ -502,7 +761,8 @@
       "Taras",
       "Wysoki standart budynku"
     ],
-    "description": "Jedyny obecnie w sprzedaży trzypokojowy wykończony apartament składający się z dwóch sypialni, przestronnego salonu z aneksem kuchennym, łazienki oraz garderoby o powierzchni 80,38 m2 z widokiem na zieleń Parku im. Ronalda Reagana patrzący w stronę morza oraz zielone prywatne patio. Usytuowany na siódmym piętrze luksusowej inwestycji Tarasy Bałtyku, zlokalizowanej w pierwszej linii zabudowy od morza",
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
     "agent": {
       "name": "John Doe",
       "agency": "Real Estate Agency",
@@ -513,7 +773,7 @@
   },
   {
     "id": 12,
-    "title": "Gdańsk, , 80.38 m², 3 pokoje",
+    "title": "Mieszkanie 72,6 m2/ Świecie ul. Krausego",
     "subtitle": "Inwestycyjne dwa mieszkania z widokiem na Marinę",
     "img": [
       {
@@ -526,18 +786,41 @@
         "url": "https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHJlYWwlMjBlc3RhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
         "id": 2,
         "name": "House"
+      },
+      {
+        "url": "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "id": 2,
+        "name": "House"
       }
     ],
     "type": "Dom",
-    "city": "Gdańsk",
+    "city": "Sopot",
     "distriction": "Morena",
-    "transactionType": "Sprzedaż",
+    "transactionType": "Wynajem",
     "rooms": 4,
     "area": 80,
-    "price": 180000,
+    "rent" : "",
+    "form-prop": "",
+    "condition" : "Po remoncie",
+    "balcony" : "balkon",
+    "parking" : "darmowe",
+    "heat" : "centralne",
+    "price": 160000,
+    "price-m" : 3618,
     "year": 2011,
     "offer": "RS61782836",
     "floor": 2,
+    "market" : "pierwotny",
+    "ad-type" : "osoba prywatna",
+    "avaible" : "",
+    "house-type" : "Mieszkanie w bloku",
+    "windows" : "plastikowe",
+    "elevator" : "brak",
+    "media" : "",
+    "security" : "",
+    "equipment" : "",
+    "additional-info" : "",
+    "material" : "",
     "features": [
       "Blisko morza",
       "Widok",
@@ -548,7 +831,8 @@
       "Taras",
       "Wysoki standart budynku"
     ],
-    "description": "Jedyny obecnie w sprzedaży trzypokojowy wykończony apartament składający się z dwóch sypialni, przestronnego salonu z aneksem kuchennym, łazienki oraz garderoby o powierzchni 80,38 m2 z widokiem na zieleń Parku im. Ronalda Reagana patrzący w stronę morza oraz zielone prywatne patio. Usytuowany na siódmym piętrze luksusowej inwestycji Tarasy Bałtyku, zlokalizowanej w pierwszej linii zabudowy od morza",
+    "descriptionTitle": "Penthouse z tarasem na dachu budynku z oszałamiającym widokiem na morze",
+    "description": "Mieszkanie ok 55m2 znajdujące sie na osiedlu budynków w zabudowie bliźniaczej. Mieszkanie swieżo po remoncie. Mieszkanie jest bezczynszowe. Opłaty wynikają jedynie ze zużycia mediów.",
     "agent": {
       "name": "John Doe",
       "agency": "Real Estate Agency",
