@@ -14,7 +14,7 @@ export default function BuyGuide() {
   let y: String = JSON.stringify(isBuyProps);
   let [isBuy, setIsBuy] = useState<boolean>();
   useEffect(() => {
-    setIsBuy(y == `"buy"` ? true : false);
+    setIsBuy(y === `"buy"` ? true : false);
   }, [y])
 
   return (
@@ -33,18 +33,18 @@ export default function BuyGuide() {
       <article className="guide-subject-choice">
         <p
           onClick={() => {setIsBuy(true)}}
-          className={isBuy == true ? "choice-active" : " "}
+          className={isBuy === true ? "choice-active" : " "}
         >
           Przewodnik zakupu nieruchomości
         </p>
         <p
           onClick={() => {setIsBuy(false)}}
-          className={isBuy == false ? "choice-active" : " "}
+          className={isBuy === false ? "choice-active" : " "}
         >
           Przewodnik sprzedaży nieruchomości
         </p>
       </article>
-      {y == `"buy"` || isBuy == true ? (
+      {y === `"buy"` || isBuy === true ? (
         <article className="buy-guide">
           <div className="box1">
             <Link to="/guides/how-to-buy-a-house">

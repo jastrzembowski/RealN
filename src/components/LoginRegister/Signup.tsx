@@ -1,14 +1,13 @@
 import Dialog from "@material-ui/core/Dialog";
 import React, {  useState } from "react";
 import { Alert } from "react-bootstrap";
-import { Button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 import { MdPersonAdd } from "react-icons/md";
 import "./loginregister.scss";
 
 export default function Signup() {
   const [error, setError] = useState("");
-  const [message, setMessage] = useState("");
+  // const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
@@ -26,10 +25,10 @@ export default function Signup() {
 
     try {
       setError("");
-      setMessage("");
+      // setMessage("");
       setLoading(true);
       handleClose();
-      setMessage("Pomyślnie założono konto!");
+      // setMessage("Pomyślnie założono konto!");
       navigate("/");
     } catch {
       setError("Failed to create an account");

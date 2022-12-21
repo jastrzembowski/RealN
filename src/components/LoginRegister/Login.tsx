@@ -1,7 +1,6 @@
 import Dialog from "@material-ui/core/Dialog";
 import React, { useState } from "react";
 import { Alert } from "react-bootstrap";
-import { Button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 import { MdPerson } from "react-icons/md";
 import "./loginregister.scss";
