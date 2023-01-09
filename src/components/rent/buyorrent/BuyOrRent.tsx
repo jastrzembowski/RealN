@@ -6,7 +6,7 @@ const BuyOrRent = () => {
   return (
     <>
       <header className="buy-or-rent-header">
-        <h1>Wynajem czy kupno?</h1>
+        <h1>Kupno czy wynajem?</h1>
       </header>
       <article className="buyorrent-box">
         <h1>Podejmujesz decyzję między wynajmem a kupnem domu? </h1>
