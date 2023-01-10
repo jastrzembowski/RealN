@@ -150,6 +150,7 @@ const Nav = () => {
         )}
     <Link to="/contact" className="contact-link">Kontakt</Link>
         <ul className="nav-login-bar">
+      <li>  <Link to="/add-new-offer">Dodaj ofertę</Link></li>
           <Login />
           <Signup />
         </ul>

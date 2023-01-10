@@ -20,7 +20,12 @@ const Nav = (props: any) => {
         </Link>
 
         <input type="text" placeholder="Miasto, adres, kod pocztowy"></input>
-        <Link to ="/search"><FontAwesomeIcon icon={faMagnifyingGlass} className="nav-glass-icon" /></Link>
+        <Link to="/search">
+          <FontAwesomeIcon
+            icon={faMagnifyingGlass}
+            className="nav-glass-icon"
+          />
+        </Link>
       </aside>
       <ul className="nav-bar2">
         <li>500-000-000</li>
@@ -153,9 +158,12 @@ const Nav = (props: any) => {
             </Link>
           </div>
         )}
-  <Link to="/contact" className="contact-link">Kontakt</Link>
+        <Link to="/contact" className="contact-link">
+          Kontakt
+        </Link>
         <ul className="nav-login-bar2">
-        <Login />
+          <li> <Link to="/add-new-offer">Dodaj ofertę</Link></li>
+          <Login />
           <Signup />
         </ul>
       </ul>

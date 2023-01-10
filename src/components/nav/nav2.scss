@@ -43,9 +43,17 @@
         padding: 8px 14px;
         margin: 5px;
         font-weight: 600;
-        &:hover {
+        text-decoration: none;       
+        a{
+          color: $dark-gray;
+          text-decoration: none;
+        }
+         &:hover {
           color: white;
           background-color: $dark-gray;
+          a{
+            color: white;
+          }
         }
       }
     }

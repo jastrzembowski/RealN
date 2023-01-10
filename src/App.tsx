@@ -32,6 +32,8 @@ import Contact from "./components/utils/Contact";
 import Searchpage from "./components/buy/searchpage/Searchpage";
 import PropertyDetails from "./components/buy/propertyDetails/PropertyDetails";
 import UpcomingEvents from "./components/resources/findevents/upcomingevents/UpcomingEvents"
+import AddOffer from "./components/AddOffer";
+
 
 const App = () => {
   let nav;
@@ -50,6 +52,7 @@ const App = () => {
       {nav}
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/add-new-offer" element={<AddOffer />} />
         <Route path="/search/:id" element={<PropertyDetails />} />
         <Route path="/house-nearby" element={<HouseNearby />} />
         <Route path="/home-nearby" element={<HomeNearby />} />
