@@ -1,16 +1,15 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./addoffer.scss";
 import Loader from "./Loader";
 import "../index.scss";
 import { MdCloudUpload, MdDelete } from "react-icons/md";
-import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 import theme from "./styles";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { motion } from "framer-motion";
 
 export default function AddOffer() {
@@ -90,10 +89,13 @@ export default function AddOffer() {
     description: description
   }
 
-  useEffect(() => {
+const imageChange = (e) => {
+  setImageAsset(e.target.value);
+  setIsLoading(false)
+
   console.log(data)
-  }, [data])
-  
+
+}
 
   const transportChange = (event) => {
     event.preventDefault();
@@ -315,6 +317,7 @@ export default function AddOffer() {
                         <div>
                           <MdCloudUpload
                             style={{ fontSize: "35px", color: "gray" }}
+                            onClick={imageChange}
                           />
                           <p>Kliknij aby dodać zdjęcia</p>
                         </div>
@@ -328,7 +331,7 @@ export default function AddOffer() {
                   ) : (
                     <>
                       <div className="image-holder">
-                        <img src={imageAsset} alt="uploaded image" />
+                        <img src={imageAsset} alt="uploaded " />
                         <button type="button" className="delete-button">
                           <MdDelete style={{ color: "white" }} />
                         </button>
