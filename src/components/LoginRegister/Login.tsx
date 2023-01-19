@@ -1,4 +1,4 @@
-import Dialog from "@material-ui/core/Dialog";
+import Dialog from '@mui/material/Dialog';
 import React, { useState } from "react";
 import { Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";

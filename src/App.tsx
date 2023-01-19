@@ -1,6 +1,5 @@
 import { Routes, Route, useLocation} from "react-router-dom";
 import "./App.css";
-
 import Nav from "./components/nav/Nav";
 import Footer from "./components/utils/Footer";
 import Nav2 from "./components/nav/Nav2";
@@ -32,7 +31,7 @@ import Contact from "./components/utils/Contact";
 import Searchpage from "./components/buy/searchpage/Searchpage";
 import PropertyDetails from "./components/buy/propertyDetails/PropertyDetails";
 import UpcomingEvents from "./components/resources/findevents/upcomingevents/UpcomingEvents"
-import AddOffer from "./components/AddOffer";
+import AddOffer from "./components/AddOffer/AddOffer";
 
 
 const App = () => {

@@ -1,4 +1,3 @@
-import React from "react";
 import SmallContact from "../../utils/SmallContact";
 import "./whybuy.scss";
 import mock from "../../../images/mock.png";
