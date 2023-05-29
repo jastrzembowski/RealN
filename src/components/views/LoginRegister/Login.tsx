@@ -1,9 +1,9 @@
 import Dialog from "@mui/material/Dialog";
-import React, { useState, useContext } from "react";
+import React, { useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { MdExitToApp, MdPerson } from "react-icons/md";
+import {  MdPerson } from "react-icons/md";
 import "./loginregister.scss";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import logo from "../../../images/logo2.jpg";
 import { useAppDispatch } from "../../store/configureStore";
 import { login } from './accountSlice';
@@ -89,16 +89,16 @@ export default function Login() {
     setLoading(false);
   }
 
-  async function handleLogout() {
-    try {
-      setError("");
-      setMessage("Pomyślnie wylogowano!");
-      navigate("/");
-      window.location.reload();
-    } catch {
-      setError("Failed to log out");
-    }
-  }
+  // async function handleLogout() {
+  //   try {
+  //     setError("");
+  //     setMessage("Pomyślnie wylogowano!");
+  //     navigate("/");
+  //     window.location.reload();
+  //   } catch {
+  //     setError("Failed to log out");
+  //   }
+  // }
 
   return (
     <>

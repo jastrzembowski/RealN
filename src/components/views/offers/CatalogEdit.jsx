@@ -227,6 +227,7 @@ export default function AddOffer() {
                 id="marginoutlined-basic"
                 label="Powierzchnia w m2"
                 variant="outlined"
+                value={size}
                 style={{
                   width: "48%",
                   margin: "0px 1%",

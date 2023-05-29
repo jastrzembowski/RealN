@@ -1,10 +1,9 @@
 import Dialog from "@mui/material/Dialog";
-import React, { useContext, useState } from "react";
+import React, {  useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MdPersonAdd } from "react-icons/md";
 import "./loginregister.scss";
-import { AccountContext } from "../../Account";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -20,6 +19,9 @@ export default function Signup() {
 
   const handleClickOpen = () => {
     setOpen(true);
+    setError("noerror");
+    setLoading(false)
+    navigate('/')
   };
 
   const handleClose = () => {
@@ -49,17 +51,16 @@ export default function Signup() {
   }
   return (
     <>
-      {/* {!status && (
+
         <li onClick={handleClickOpen} className="desktop">
           <MdPersonAdd style={{ marginRight: "5px" }} />
           Rejestracja
         </li>
-      )}
-      {!status && (
+
         <li onClick={handleClickOpen} className="small">
           <MdPersonAdd />
         </li>
-      )} */}
+
 
       <Dialog
         open={open}

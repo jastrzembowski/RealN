@@ -2,7 +2,6 @@ import "./App.css";
 import Nav from "./components/views/nav/Nav";
 import Footer from "./components/views/utils/Footer";
 import Router from "./Routes"
-import { Account } from "./components/Account";
 import 'react-toastify/dist/ReactToastify.css';
 import {ToastContainer} from 'react-toastify'
 

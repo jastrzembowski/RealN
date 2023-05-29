@@ -1,7 +1,7 @@
 import "./propertyDetails.scss";
 // import data from "../../../../data.json";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 const Parse = require("parse/dist/parse.min.js");
 
 function PropertyDetails() {
@@ -10,7 +10,7 @@ function PropertyDetails() {
 
   const [data, setData] = useState<any[]>([]);
 
-  const fetchData = async () => {
+  const fetchData = useCallback( async () => {
     const offersParse = Parse.Object.extend("Offers");
     const query = new Parse.Query(offersParse);     
     query.include("agent");
@@ -23,11 +23,11 @@ function PropertyDetails() {
     const { data }: any = data4;
     setData(data);
     console.log(data[`${y}`]);
-  };
+  }, [y])
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
   if (!data) return <h1>loading...</h1>;
   return (
     <>

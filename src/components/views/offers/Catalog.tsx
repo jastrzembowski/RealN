@@ -46,6 +46,7 @@ export default function Catalog() {
             </Box>
           ))}
           <Pagination
+          onChange={()=>setPage(page)}
             size="large"
             style={{
               position: "relative",

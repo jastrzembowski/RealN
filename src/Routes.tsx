@@ -12,7 +12,7 @@ import Commision from "./components/views/resources/buyguide/guides/Commision";
 import FindServices from "./components/views/resources/findservices/FindServices";
 import FindEvents from "./components/views/resources/findevents/FindEvents";
 import HouseMarket from "./components/views/resources/housemarket/HouseMarket";
-import SellHouse from "./components/views/sell/sellhouse/SellHouse";
+// import SellHouse from "./components/views/sell/sellhouse/SellHouse";
 import SellWorth from "./components/views/sell/sellworth/SellWorth";
 import SellDashboard from "./components/views/sell/selldashboard/SellDashboard";
 import PayOff from "./components/views/sell/payoff/Payoff";
