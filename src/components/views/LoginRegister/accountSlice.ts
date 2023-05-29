@@ -26,6 +26,7 @@ export const login = createAsyncThunk(
     try {
       const user = await Parse.User.logIn(email, password);
       alert(`Success! User ${user.get('username')} has successfully signed in!`);
+      console.log(user)
       return user;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(error.message);

@@ -137,7 +137,7 @@ const Nav = () => {
               <Link to="/guides/sell" className="sell-drop10"onClick={() => menuControl()}>
                 Przewodnik sprzedaży domu
               </Link>
-              <Link to="/guides/home-improvement" className="sell-drop11"onClick={() => menuControl()}>
+              <Link to="/sell/how-much-is-it-worth/ten-advices" className="sell-drop11"onClick={() => menuControl()}>
                 Jak zwiększyć wartość nieruchomości
               </Link>
               {/* <Link to="/find-agent" className="sell-drop12"onClick={() => menuControl()}>
