@@ -25,6 +25,8 @@ export default function Login() {
 
   const handleClickOpen = () => {
     setOpen(true);
+    setError("noerror");
+    navigate('/')
   };
 
   const handleClose = () => {
