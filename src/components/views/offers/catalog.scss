@@ -1,0 +1,70 @@
+@import "../../../index.scss";
+
+.catalog-flexbox {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  margin-top: 100px;
+  .catalog-container {
+    justify-content: center;
+    width: 70%;
+    min-width: 1000px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    .filters-box {
+      width: 10%;
+      padding: 10px;
+      min-width: 250px;
+      height: min-content;
+      min-height: 600px;
+      background-color: white;
+      -webkit-box-shadow: -1px 11px 18px -7px rgba(49, 49, 49, 1);
+      -moz-box-shadow: -1px 11px 18px -7px rgba(49, 49, 49, 1);
+      box-shadow: -1px 11px 18px -7px rgba(49, 49, 49, 1);
+      h1 {
+        font-size: 22px;
+        padding: 10px;
+        color: $dark-gray;
+      }
+    }
+    .catalog-box {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .offer-line {
+        align-self: center;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid $mid-gray;
+        padding: 8px;
+        width: 90%;
+        align-items: center;
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        justify-content: space-around;
+        h3 {
+          width: 30px;
+        }
+        p {
+          width: 400px;
+        }
+        h4 {
+          width: 100px;
+        }
+        img {
+          width: 100px;
+        }
+        &:hover {
+          background-color: $gray;
+          transition: all 0.3s;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
