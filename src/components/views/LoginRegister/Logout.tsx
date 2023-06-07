@@ -1,33 +1,28 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { MdExitToApp } from "react-icons/md";
 import "./loginregister.scss";
-const Parse = require('parse/dist/parse.min.js');
+import { useAppDispatch } from "../../store/configureStore";
+import router from "../../../Routes";
+import { logout } from "./accountSlice";
+import { toast } from "react-toastify";
 
 export default function Logout() {
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
-  const [message, setMessage] = useState("");
+  const dispatch = useAppDispatch();
 
-  async function handleLogout() {
+  const handleLogout = async (e: any) => {
     try {
-      await Parse.User.logOut();
-      const currentUser = await Parse.User.current();
-      if (currentUser === null) {
-        setError("");
-        setMessage("Pomyślnie wylogowano!");
-        navigate("/");
-      }
-    } catch {
-      setError("Failed to log out");
+      await dispatch(logout());
+      router.navigate("/");
+      toast.error("Pomyślnie wylogowano!")
+
+    } catch (error) {
+      console.log(error);
     }
-  }
+  };
+
   return (
-    <div>
-      <li onClick={() => handleLogout()}>
-        <MdExitToApp style={{ marginRight: "5px" }} />
-        Wyloguj się
-      </li>
-    </div>
+    <li onClick={handleLogout}>
+      <MdExitToApp style={{ marginRight: "5px" }} />
+      Wyloguj się
+    </li>
   );
 }

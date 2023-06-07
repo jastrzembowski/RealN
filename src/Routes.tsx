@@ -1,5 +1,4 @@
-import { Routes, Route } from "react-router-dom";
-import Main from "./components/views/main/Main";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import HouseNearby from "./components/views/buy/housenearby/HouseNearby";
 import HomeNearby from "./components/views/buy/homenearby/HomeNearby";
 import LandNearby from "./components/views/buy/ladnnearby/LandNearby";
@@ -12,7 +11,6 @@ import Commision from "./components/views/resources/buyguide/guides/Commision";
 import FindServices from "./components/views/resources/findservices/FindServices";
 import FindEvents from "./components/views/resources/findevents/FindEvents";
 import HouseMarket from "./components/views/resources/housemarket/HouseMarket";
-// import SellHouse from "./components/views/sell/sellhouse/SellHouse";
 import SellWorth from "./components/views/sell/sellworth/SellWorth";
 import SellDashboard from "./components/views/sell/selldashboard/SellDashboard";
 import PayOff from "./components/views/sell/payoff/Payoff";
@@ -22,7 +20,7 @@ import RentGuide from "./components/views/rent/rentguide/RentGuide";
 import BuyOrRent from "./components/views/rent/buyorrent/BuyOrRent";
 import RentTrends from "./components/views/rent/renttrends/RentTrends";
 import TipsForRenters from "./components/views/rent/tipsforrenters/TipsForRenters";
-import Contact from "./components/views/utils/Contact";
+import Contact from "./components/views/main/Contact";
 import Searchpage from "./components/views/buy/searchpage/Searchpage";
 import PropertyDetails from "./components/views/buy/propertyDetails/PropertyDetails";
 import UpcomingEvents from "./components/views/resources/findevents/upcomingevents/UpcomingEvents";
@@ -33,46 +31,57 @@ import HomeValue from "./components/views/sell/sellworth/HomeValue";
 import FiveWays from "./components/views/sell/sellworth/FiveWays";
 import TenAdvices from "./components/views/sell/sellworth/TenAdvices";
 import SellWith from "./components/views/sell/sellwithrealn/SellWith";
+import App from "./App";
 
-export default function Router() {
-  return (
-    <Routes>
-      <Route path="/" element={<Main />} />
-      <Route path="/add-new-offer" element={<AddOffer />} />
-      <Route path="/catalog" element={<Catalog />} />
-      <Route path="/catalog/:id" element={<CatalogEdit />} />
-      <Route path="/search/:id" element={<PropertyDetails />} />
-      <Route path="/house-nearby" element={<HouseNearby />} />
-      <Route path="/home-nearby" element={<HomeNearby />} />
-      <Route path="/land-nearby" element={<LandNearby />} />
-      <Route path="/why-buy" element={<WhyBuy />} />
-      <Route path="/can-i-afford" element={<CanIAfford />} />
-      <Route path="/guides/:isBuyProps" element={<BuyGuide />} />
-      <Route path="/guides/how-to-buy-a-house" element={<BuyInSteps />} />
-      <Route
-        path="/guides/how-to-choose-real-estate-agent"
-        element={<ChooseAgent />}
-      />
-      <Route path="/guides/real-estate-commision" element={<Commision />} />
-      <Route path="find-services" element={<FindServices />} />
-      <Route path="/find-events" element={<FindEvents />} />
-      <Route path="/housing-market" element={<HouseMarket />} />
-      <Route path="/search" element={<Searchpage />} />
-      <Route path="/sell" element={<SellWith />} />
-      <Route path="/upcoming-events" element={<UpcomingEvents />}></Route>
-      <Route path="/sell/how-much-is-it-worth" element={<SellWorth />} />
-      <Route path="/sell/how-much-is-it-worth/find-the-value" element={<HomeValue />} />
-      <Route path="/sell/how-much-is-it-worth/five-ways" element={<FiveWays />} />
-      <Route path="/sell/how-much-is-it-worth/ten-advices" element={<TenAdvices />} />
-      <Route path="/sell/dashboard" element={<SellDashboard />} />
-      <Route path="/guides/will-selling-pay-off" element={<PayOff />} />
-      <Route path="/guide/how-to-sell-a-house" element={<SellGuide />} />
-      <Route path="/guides/home-improvement" element={<HomeImprovement />} />
-      <Route path="/guides/how-to-rent-a-house" element={<RentGuide />} />
-      <Route path="/guides/buy-or-rent" element={<BuyOrRent />} />
-      <Route path="/guides/rent-trends" element={<RentTrends />} />
-      <Route path="/guides/tips-for-renters" element={<TipsForRenters />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
-  );
-}
+const router = createBrowserRouter([
+  {
+    path: "*",
+    element: <App />,
+    children: [
+      { path: "add-new-offer", element: <AddOffer /> },
+      { path: "catalog", element: <Catalog /> },
+      { path: "catalog/:id", element: <CatalogEdit /> },
+      { path: "search/:id", element: <PropertyDetails /> },
+      { path: "house-nearby", element: <HouseNearby /> },
+      { path: "home-nearby", element: <HomeNearby /> },
+      { path: "land-nearby", element: <LandNearby /> },
+      { path: "why-buy", element: <WhyBuy /> },
+      { path: "can-i-afford", element: <CanIAfford /> },
+      { path: "guides", element: <BuyGuide /> },
+      { path: "guides/how-to-buy-a-house", element: <BuyInSteps /> },
+      {
+        path: "guides/how-to-choose-real-estate-agent",
+        element: <ChooseAgent />,
+      },
+      { path: "guides/real-estate-commision", element: <Commision /> },
+      { path: "find-services", element: <FindServices /> },
+      { path: "find-events", element: <FindEvents /> },
+      { path: "housing-market", element: <HouseMarket /> },
+      { path: "search", element: <Searchpage /> },
+      { path: "sell", element: <SellWith /> },
+      { path: "upcoming-events", element: <UpcomingEvents /> },
+      { path: "sell/how-much-is-it-worth", element: <SellWorth /> },
+      {
+        path: "sell/how-much-is-it-worth/find-the-value",
+        element: <HomeValue />,
+      },
+      { path: "sell/how-much-is-it-worth/five-ways", element: <FiveWays /> },
+      {
+        path: "sell/how-much-is-it-worth/ten-advices",
+        element: <TenAdvices />,
+      },
+      { path: "sell/dashboard", element: <SellDashboard /> },
+      { path: "guides/will-selling-pay-off", element: <PayOff /> },
+      { path: "guide/how-to-sell-a-house", element: <SellGuide /> },
+      { path: "guides/home-improvement", element: <HomeImprovement /> },
+      { path: "guides/how-to-rent-a-house", element: <RentGuide /> },
+      { path: "guides/buy-or-rent", element: <BuyOrRent /> },
+      { path: "guides/rent-trends", element: <RentTrends /> },
+      { path: "guides/tips-for-renters", element: <TipsForRenters /> },
+      { path: "contact", element: <Contact /> },
+      { path: "*", element: <Navigate replace to="/" /> },
+
+    ],
+  },
+]);
+export default router;

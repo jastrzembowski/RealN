@@ -1,5 +1,4 @@
 import "./propertyDetails.scss";
-// import data from "../../../../data.json";
 import { useParams } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
 const Parse = require("parse/dist/parse.min.js");
@@ -34,10 +33,10 @@ function PropertyDetails() {
       <div className="img-box">
         <div className="img1-box">
           <img className="img1" src={data[`${y}`].img[0].url} alt="house" />
-        </div>{" "}
+        </div>
         <div className="img2-box">
           <img className="img2" src={data[`${y}`].img[1].url} alt="house2" />
-        </div>{" "}
+        </div>
         <div className="img3-box">
           <img className="img3" src={data[`${y}`].img[0].url} alt="house3" />
         </div>

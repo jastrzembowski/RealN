@@ -1,13 +1,9 @@
-import React, { useEffect } from "react";
 import Slider from "react-slick";
 import data from "../../../data.json";
 import Offer from "./Offer";
 import "./slider.scss";
 
 export default function EstateSlider() {
-  useEffect(() => {
-    console.log(data);
-  }, []);
 
   const settings = {
     slidesToShow: 3,

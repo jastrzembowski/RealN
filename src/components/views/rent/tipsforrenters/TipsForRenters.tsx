@@ -1,4 +1,3 @@
-import React from "react";
 import "./tipsforrenters.scss";
 import { Link } from "react-router-dom";
 
@@ -12,196 +11,80 @@ const TipsForRenters = () => {
       </div>
       <article className="tips-text">
         <h2>
-          Niezależnie od tego, czy wyprowadzasz się z domu rodziców, czy
-          zostawiasz za sobą życie w akademiku, zostanie najemcą mieszkania po
-          raz pierwszy jest dużym i ekscytującym krokiem. Jednak jeśli nie znasz
-          tajników procesu wynajmu, zadanie to może wydawać się przytłaczające.
-          Na szczęście zebraliśmy listę 8 kluczowych wskazówek, które pomogą
-          osobom wynajmującym mieszkanie po raz pierwszy znaleźć idealne
-          mieszkanie i sprawić, że zmiana będzie tak gładka, jak to tylko
-          możliwe.{" "}
+          Niezależnie od tego, czy jesteś nowym najemcą czy doświadczonym
+          wynajmującym, znajdziesz tutaj przydatne wskazówki i informacje, które
+          pomogą Ci w wynajmie i utrzymaniu idealnego mieszkania. Niezależnie od
+          tego, czy szukasz porad dotyczących znalezienia odpowiedniego
+          mieszkania, negocjowania umowy najmu, zarządzania finansami czy
+          utrzymania dobrej relacji z właścicielem, jesteśmy tu po to, aby Ci
+          pomóc. Przeczytaj nasze porady i zyskaj pewność i wiedzę potrzebną do
+          udanego wynajmu nieruchomości.
         </h2>
-        <h1>1. Twój budżet musi obejmować coś więcej niż tylko czynsz</h1>
+        <h1>1. Wybierz odpowiednie miejsce:</h1>
         <p>
-          Jeśli jesteś osobą wynajmującą mieszkanie po raz pierwszy, wiedza o
-          tym, jak zaplanować budżet na mieszkanie jest kluczowa. Twój
-          miesięczny czynsz będzie oczywiście najbardziej znaczącym wydatkiem, z
-          którym musisz się liczyć, ale są też inne jednorazowe i bieżące
-          opłaty, które powinieneś być w stanie uiścić. Przyjrzyjmy się tym
-          kosztom bliżej.
+          Przed wynajmem nieruchomości dokładnie zastanów się nad lokalizacją.
+          Określ, czy preferujesz bliskość szkół, centrów handlowych, transportu
+          publicznego lub innych udogodnień. Upewnij się, że wybrane miejsce
+          odpowiada Twoim potrzebom i stylowi życia.
         </p>
-        <h3>Wstępne, jednorazowe koszta</h3>
+        <h1>2. Ustal budżet:</h1>
         <p>
-          Przed wprowadzeniem się do nowego mieszkania należy zaoszczędzić
-          wystarczająco dużo pieniędzy, aby opłacić następujące koszty wstępne:
-        </p>
-        <ul>
-          <li>Koszty przeprowadzki</li>
-          <li>Depozyt zabezpieczający</li>
-          <li>Czynsz za pierwszy i ostatni miesiąc (jeśli jest wymagany)</li>
-          <li>Umeblowanie, jeśli jest potrzebne</li>
-        </ul>
-        <h3>Koszty stałe</h3>
-        <p>
-          Po wprowadzeniu się do nowego miejsca, istnieje kilka bieżących
-          wydatków, które będziesz musiał pokryć każdego miesiąca:
-        </p>
-        <ul>
-          <li>Czynsz</li>
-          <li>Media, takie jak prąd, śmieci, woda, kanalizacja itp.</li>
-          <li>Internet i telefon</li>
-          <li>Parking</li>
-        </ul>
-        <p>
-          Jako osoba wynajmująca mieszkanie po raz pierwszy, być może po raz
-          pierwszy jesteś odpowiedzialny za tego typu wydatki. Ostatnią rzeczą,
-          którą chcesz zrobić, to źle ocenić, na co możesz sobie pozwolić,
-          ponieważ zapomniałeś uwzględnić opłaty za parkowanie lub kaucję.{" "}
+          Określ realistyczny budżet na nieruchomości, uwzględniając czynsz,
+          opłaty za media i inne koszty związane z utrzymaniem nieruchomości.
+          Upewynajemwnij się, że masz wystarczające środki finansowe na pokrycie
+          miesięcznych opłat.
         </p>
 
-        <h1>2. Zrób listę potrzeb, a następnie nadaj im priorytety</h1>
+        <h1>3. Przeczytaj umowę najmu:</h1>
         <p>
-          Zacznij od swojego wymarzonego mieszkania - jaka jest Twoja ostateczna
-          sytuacja życiowa? Choć może się okazać, że nie będziesz miał
-          wszystkiego na swojej liście, ważne jest, aby zrozumieć, co cenisz w
-          swoim domu. Niektóre wspólne potrzeby dla osób wynajmujących
-          mieszkanie po raz pierwszy to:
+          Przed podpisaniem umowy najmu dokładnie zapoznaj się z jej treścią.
+          Zwróć uwagę na warunki najmu, okres trwania umowy, obowiązki najemcy i
+          wynajmującego, zasady rozwiązania umowy i ewentualne dodatkowe
+          klauzule. Jeśli masz wątpliwości, skonsultuj się z prawnikiem.
         </p>
 
-        <ul>
-          <li>Funkcjonalna kuchnia</li>
-          <li>Balkon, patio lub inna prywatna przestrzeń na zewnątrz</li>
-          <li>Szafa i przestrzeń do przechowywania</li>
-          <li>
-            Bliskość pracy, życia nocnego, parków dla psów lub innych udogodnień
-          </li>
-          <li>Naturalne światło i kierunek ekspozycji</li>
-          <li>Klimatyzacja</li>
-          <li>
-            Udogodnienia w budynku, takie jak siłownia, dach lub centrum
-            biznesowe
-          </li>
-        </ul>
+        <h1>4. Dokumentuj stan nieruchomości:</h1>
         <p>
-          Gdy masz już swoją listę, ustal priorytety pozycji od najbardziej do
-          najmniej ważnych. To pomoże Ci zawęzić wybór i wybrać pomiędzy
-          podobnymi nieruchomościami.
+          Przy wprowadzaniu się do wynajmowanej nieruchomości wykonaj
+          szczegółowy inwentaryzacyjny spis stanu nieruchomości. Zrób zdjęcia
+          lub filmy, aby udokumentować ewentualne istniejące uszkodzenia lub
+          niedociągnięcia. To pomoże uniknąć nieporozumień w przyszłości.
         </p>
-        <h1>3. Zadawaj dużo pytań podczas zwiedzania</h1>
-        <p>
-          Są pewne rzeczy, które po prostu musisz wiedzieć, podczas wyboru
-          mieszkania. Możesz skierować te pytania do swojego potencjalnego
-          właściciela, lub może będziesz musiał zrobić trochę badań na własną
-          rękę. Oto lista pytań, które musisz zadać, ale możesz dodać inne w
-          zależności od swoich potrzeb.
-        </p>
-        <ol>
-          <li>Ile wynosi czynsz?</li>
-          <li>
-            Czy media są wliczone w cenę? Jeśli nie, to ile zazwyczaj kosztują?
-          </li>
-          <li>Ile wynosi kaucja?</li>
-          <li>Jak płacić za czynsz i media?</li>
-          <li>Czy jest opłata za parkowanie?</li>
-          <li>
-            Czy mieszkanie jest przyjazne zwierzętom, a jeśli tak, to jakie są
-            związane z tym opłaty?
-          </li>
-          <li>
-            Czy jakiekolwiek depozyty lub opłaty są zwracane po zakończeniu
-            najmu?
-          </li>
-          <li>Jak długi jest okres najmu?</li>
-          <li>Jakie zmiany mogę wprowadzić w moim mieszkaniu?</li>
-          <li>Jak wygląda utrzymanie mieszkania?</li>
-          <li>Czy jestem odpowiedzialny za wszelkie prace konserwacyjne?</li>
-          <li>Jakie udogodnienia są dostępne w pobliżu?</li>{" "}
-          <li>
-            Czy są jakieś szczególne zasady, o których powinienem wiedzieć?
-          </li>
-          <p>
-            Te pytania to dopiero początek. Prawdopodobnie masz specjalne
-            potrzeby lub preferencje, które powinny zainspirować dodatkowe
-            pytania. Listę tych pytań miej przy sobie podczas zwiedzania, wraz
-            ze sposobem zapisywania odpowiedzi.
-          </p>
-        </ol>
 
-        <h1>4. Wyjaśnienie sytuacji w zakresie parkowania</h1>
+        <h1>5. Płatności i terminy:</h1>
         <p>
-          Niektóre mieszkania mają wyznaczony parking lub miejsce(a) parkingowe.
-          Jeśli planujesz mieszkać ze współlokatorem i oboje macie samochody,
-          czy jest wystarczająco dużo miejsc parkingowych, aby łatwo pomieścić
-          was oboje? Kiedy nie ma wystarczającej ilości miejsc parkingowych,
-          współlokatorzy często zamieniają się miejscami z tygodnia na tydzień
-          lub znajdują inny akceptowalny kompromis. Jeśli kompleks apartamentów
-          posiada miejsca parkingowe, pamiętaj, aby zapytać, czy jest to
-          związane z dodatkowymi kosztami. Opłaty za parkowanie stają się coraz
-          bardziej powszechne w wynajmowanych nieruchomościach. Z drugiej
-          strony, wiele mieszkań nie posiada parkingu, zwłaszcza w większych
-          miastach, takich jak Warszawa czy Kraków. W takim przypadku zwróć
-          uwagę na parking uliczny. Znaki parkingowe na ulicy powiedzą Ci, w
-          które dni lub godziny parkowanie jest ograniczone lub zabronione
-          (zazwyczaj w celu zamiatania ulic lub odśnieżania). Ale powinieneś
-          również zwrócić uwagę na to, ile miejsc parkingowych jest wolnych na
-          Twojej ulicy - czy jest dużo miejsca, czy też samochody stoją zderzak
-          w zderzak? Ulice, na których samochody są zaparkowane blisko siebie,
-          zazwyczaj oznaczają, że trudno jest znaleźć miejsce parkingowe.
+          Przestrzegaj ustalonych terminów płatności czynszu i innych opłat
+          zgodnie z umową najmu. Regularnie sprawdzaj stan swojego konta i
+          potwierdzaj dokonane płatności. W razie opóźnień w płatnościach,
+          skonsultuj się z wynajmującym i staraj się znaleźć rozwiązanie.
         </p>
-        <h1>6. Poznaj najlepszą porę roku, aby wynająć mieszkanie</h1>
+
+        <h1>6. Zgłaszaj awarie i naprawy:</h1>
         <p>
-          Nie zawsze możesz kontrolować, kiedy musisz się przenieść, ale jeśli
-          masz elastyczność, wybór odpowiedniej pory roku do wynajęcia
-          mieszkania może mieć duży wpływ. Jeśli Twoim głównym zmartwieniem jest
-          cena, będziesz chciał szukać mieszkania w miesiącach zimowych.
-          Zazwyczaj większość ludzi przeprowadza się w miesiącach letnich
-          (studenci wyprowadzają się z domu itp.), więc popyt i ceny są
-          zazwyczaj najwyższe w tym czasie, a najniższe w zimie. Należy
-          pamiętać, że podczas gdy ceny wynajmu mogą być niższe, może nie być
-          duży wybór kompleksów apartamentów z dostępnością.
+          Jeśli wystąpią jakiekolwiek awarie lub potrzeba naprawy w
+          nieruchomości, niezwłocznie zgłoś to wynajmującemu. Zachowaj
+          dokumentację zgłoszeń i odpowiedzi, aby mieć udokumentowany ślad
+          komunikacji w przypadku sporów.
         </p>
+        <h1>7. Zachowaj porządek</h1>
         <p>
-          Z drugiej strony, jeśli idealne mieszkanie jest Twoim priorytetem, to
-          przeprowadzka w okresie letnim może być lepszą opcją. Większość
-          najemców podpisuje 12-miesięczne umowy najmu w lecie. Dlatego też
-          większość umów najmu zazwyczaj kończy się również w tym czasie.
-          Oznacza to, że na rynku pojawia się największa liczba nowych mieszkań,
-          więc będziesz miał wiele opcji do wyboru. Głównym minusem jest to, że
-          ceny wynajmu będą zazwyczaj wyższe i będziesz musiał działać szybko,
-          zanim najlepsze mieszkania znikną z rynku.
+          Dbaj o wynajmowaną nieruchomość i utrzymuj ją w czystości. Szanuj
+          mienie i przestrzeń wspólną, jeśli takie istnieją. Regularnie wykonuj
+          podstawowe prace konserwacyjne, takie jak czyszczenie, usuwanie
+          drobnych usterek czy pielęgnacja ogrodu.
         </p>
-        <h1>7. Dokładnie przeczytaj i upewnij się, że rozumiesz umowę najmu</h1>
+
+        <h1>8. Rozwiązywanie sporów:</h1>
         <p>
-          Jako pierwszy najemca mieszkania, przeglądanie umowy najmu jest jednym
-          z najważniejszych kroków do uzyskania mieszkania. Chociaż umowa najmu
-          może zawierać skomplikowany język, będzie ona nakreślać najważniejsze
-          umowy, które podejmujesz podpisując ją. Oto kilka rzeczy, które
-          powinieneś zanotować:
-        </p>
-        <ul>
-          <li>Długość umowy najmu</li>
-          <li>
-            Polityka dotycząca zwierząt domowych i wszelkie specjalne warunki
-            (jak dodatkowe opłaty)
-          </li>
-          <li>Wymagania dotyczące depozytu i sposób jego zwrotu</li>
-          <li>Zasady podnajmu</li>
-          <li>Obowiązki związane z użytkowaniem</li>
-          <li>Procedury konserwacyjne</li>
-        </ul>
-        <p>
-          W razie wątpliwości, posiadanie umowy najmu przejrzanej przez prawnika
-          wynajmującego jest świetnym pomysłem. Adwokat będzie w stanie
-          wychwycić wszelkie nielegalne zapisy, wyjaśnić jak działają zapisy,
-          wskazać niekorzystne zapisy i ich konsekwencje oraz zasugerować
-          zmiany, które zapewnią Ci bardziej korzystną umowę najmu.
+          Jeśli wystąpią jakiekolwiek problemy lub spory z wynajmującym, staraj
+          się rozwiązać je najpierw w sposób komunikacyjny i pokojowy
         </p>
 
         <h3>
-          Wyszukiwanie i znalezienie idealnego mieszkania wymaga trochę
-          staranności, cierpliwości i przygotowania. Stosując się do tych
-          wskazówek, można uniknąć ewentualnych pułapek i uczynić proces
-          polowania na mieszkanie tak płynnym, jak to tylko możliwe.
+          Pamiętaj, że te porady mają na celu zapewnić Ci udany wynajem
+          nieruchomości i utrzymanie dobrej relacji z wynajmującym. Bądź
+          odpowiedzialnym najemcą i korzystaj z wynajmowanej nieruchomości z
+          szacunkiem i troską.
         </h3>
       </article>
       <article className="articles-box">

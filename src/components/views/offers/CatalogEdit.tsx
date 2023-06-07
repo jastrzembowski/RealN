@@ -1,5 +1,5 @@
-import { useState } from "react";
-import "./addoffer.scss";
+import { useState, useEffect } from "react";
+import "../../views/AddOffer/addoffer.scss";
 import "../../../index.scss";
 import {
   MdCloudUpload,
@@ -10,51 +10,78 @@ import {
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
-import theme from "./styles";
+import theme from "../AddOffer/styles";
 import { ThemeProvider } from "@mui/material/styles";
 import { motion } from "framer-motion";
+import { useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../store/configureStore";
-import { createOfferAsync } from "../offers/catalogSlice";
-import { ImageAsset, Offer } from "../../models/offer";
-import router from "../../../Routes";
-import { toast } from "react-toastify";
-import Loader from "../utils/Loader";
-import ButtonGroup from "./components/ButtonGroup";
 import {
-  transportList,
-  educationList,
-  healthList,
-  recreationList,
-  othersList,
-  amenitiesList,
-  kitchenList,
-  bathroomList,
-  furnitureList,
-  energyList,
-  mediaList,
-  directionsList,
-  typeLists,
-  floorLists,
-  roomLists,
-  conditionList,
-  parkingList,
-  buildList,
-  materialList,
-  stateList,
-  installationList,
-  loudnessList,
-  windowList,
-  style,
-} from "./components/Lists";
-import SelectGroup from "./components/SelectGroup";
-import { onChange } from "./components/onChangefunc";
+  fetchOfferAsync,
+  offersSelectors,
+  updateOfferAsync,
+} from "./catalogSlice";
+import { ImageAsset, Offer } from "../../models/offer";
+import Loader from "../utils/Loader";
+import AlertDialog from "../utils/AlertDialog";
+import  ButtonGroup  from "../AddOffer/components/ButtonGroup";
+import { style, typeLists, floorLists, roomLists, conditionList, parkingList, buildList, materialList, transportList, educationList, healthList, recreationList, othersList, amenitiesList, stateList, kitchenList, bathroomList, installationList, loudnessList, windowList, furnitureList, energyList, mediaList, directionsList } from "../AddOffer/components/Lists";
+import SelectGroup from "../AddOffer/components/SelectGroup";
+import { onChange } from "../AddOffer/components/onChangefunc";
 const Parse = require("parse/dist/parse.min.js");
 
-export default function AddOffer() {
-  const dispatch = useAppDispatch();
+export default function CatalogEdit() {
+  const { offerLoaded, status } = useAppSelector((state) => state.catalog);
 
-  const [isLoading, setIsLoading] = useState(false);
+  const { id } = useParams();
+  const dispatch = useAppDispatch();
+  const offer = useAppSelector((state) =>
+    offersSelectors.selectById(state, id!)
+  );
+
+  useEffect(() => {
+    if (offer === undefined || !offerLoaded) dispatch(fetchOfferAsync(id!));
+
+    if (offer) {
+      setTitle(offer?.title);
+      setSize(offer[1].size);
+      setType(offer[1].type)
+      setCity(offer[1].city);
+      setLand(offer[1].land);
+      setDistrict(offer[1].district);
+      setStreet(offer[1].street);
+      setStnum(offer[1].stnum);
+      setFloor(offer[1].floor);
+      setTitle(offer[1].title);
+      setBuildType(offer[1].buildType);
+      setMaterial(offer[1].material);
+      setCosts(offer[1].costs);
+      setYear(offer[1].year);
+      setCondition(offer[1].condition);
+      setParking(offer[1].patking);
+      setTransport(offer[1].transport);
+      setEducation(offer[1].education);
+      setHealth(offer[1].health);
+      setRecreation(offer[1].recreation);
+      setOthers(offer[1].others);
+      setAmenities(offer[1].amenities);
+      setKitchen(offer[1].kitchen);
+      setKitchenAm(offer[1].kitchenAm);
+      setBathroom(offer[1].bathroom);
+      setBathAm(offer[1].bathAm);
+      setInstallation(offer[1].installation);
+      setLoudness(offer[1].loudness);
+      setWindows(offer[1].windows);
+      setFurnitured(offer[1].furnitured);
+      setEnergy(offer[1].energy);
+      setMedia(offer[1].media);
+      setDirection(offer[1].direction);
+      setDescription(offer[1].description);
+      setImageAsset(offer[1].imageAsset);
+    }
+  }, [offerLoaded, dispatch, id, offer]);
+
   const [showMore, setShowMore] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [title, setTitle] = useState("");
   const [type, setType] = useState("");
   const [size, setSize] = useState("");
@@ -100,7 +127,6 @@ export default function AddOffer() {
     updatedAt: "",
     objectId: "",
   });
-  const [imgPrev, setImgPrev] = useState("");
 
   const offerData: Offer = {
     title: title,
@@ -142,18 +168,10 @@ export default function AddOffer() {
     imageAsset: imageAsset,
   };
 
-  const createOffer = async function (event: any) {
-    event.preventDefault();
-    dispatch(createOfferAsync({ offerData: offerData }));
-    toast.success("Pomyślnie utworzono ofertę!");
-    router.navigate("/catalog");
-  };
-
   const uploadImage = (e: any) => {
     setIsLoading(true);
     const imageFile = e.target.files[0];
     const imageUrl = new Parse.File("image.jpg", imageFile);
-    setImgPrev(URL.createObjectURL(imageFile));
     setImageAsset(imageUrl);
     setIsLoading(false);
   };
@@ -162,13 +180,19 @@ export default function AddOffer() {
     e.preventDefault();
     setShowMore(!showMore);
   };
+  const editOffer = () => {
+    dispatch(updateOfferAsync({offerData, id}));
+  };
+  if (status.includes("pending")) return <h1>Loading</h1>;
+  if (!offer) return <h1 style={{ marginTop: "150px" }}>Not found</h1>;
 
   return (
     <ThemeProvider theme={theme}>
       <article className="add-offer_box">
         <header>
-          <h1>Dodaj swoją ofertę</h1>
+          <h1>Edytuj ofertę</h1>
         </header>
+        <AlertDialog id={id} />
         <form>
           <article className="add-title">
             <h3>Tytuł Twojego ogłoszenia</h3>
@@ -178,12 +202,12 @@ export default function AddOffer() {
             </p>
             <TextField
               id="outlined-basic"
-              label="Wpisz tytuł ogłoszenia"
+              value={title || ""}
               variant="outlined"
               onChange={(e) => setTitle(e.target.value)}
             />
           </article>
-          <article>
+           <article>
             <h3>Podstawowe informacje </h3>
             <div className="flex-row">
               <FormControl style={style}>
@@ -199,8 +223,8 @@ export default function AddOffer() {
                 id="outlined-basic"
                 label="Powierzchnia w m2"
                 variant="outlined"
-                value={size || ""}
                 style={style}
+                value={size || ""}
                 onChange={(e) => setSize(e.target.value)}
               />
             </div>
@@ -273,7 +297,7 @@ export default function AddOffer() {
                   ) : (
                     <>
                       <div className="image-holder">
-                        <img src={imgPrev} alt="uploaded" />
+                        <img src={imageAsset.url} alt="uploaded" />{" "}
                         <button type="button" className="delete-button">
                           <MdDelete style={{ color: "white" }} />
                         </button>
@@ -615,10 +639,7 @@ export default function AddOffer() {
             style={style}
             onChange={(e: any) => setPriceM(e.target.value)}
           />
-
-          <button className="add-offer-button" onClick={createOffer}>
-            Dodaj ofertę
-          </button>
+          <button className="add-offer-button" onClick={()=>editOffer()}>Zapisz zmiany</button>
         </form>
       </article>
     </ThemeProvider>

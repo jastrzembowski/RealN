@@ -182,29 +182,32 @@ const BuyOrRent = () => {
 
         <h1>Zalety kupna domu</h1>
         <ul>
-<li>
-          <span className="text-bold">Budowanie kapitału: </span>
-          Jako właściciel domu będziesz miał szansę zbudować kapitał własny i
-          potencjalnie zwiększyć wartość swojego domu. Im dłużej posiadasz swój
-          dom, tym więcej masz kapitału własnego i tym więcej pieniędzy
-          prawdopodobnie zarobisz, gdy go sprzedasz. Kapitał własny może również
-          pozwolić Ci na pożyczenie pieniędzy na duże wydatki i zbudowanie
-          bogactwa, które przyniesie Ci korzyści w późniejszym życiu.
-        </li>
-        <li>
-          <span className="text-bold">Możliwość dostosowania do potrzeb: </span>
-          Kupno domu oznacza, że jest on Twój - możesz go pomalować, przebudować
-          i dostosować przestrzeń do swoich upodobań bez konieczności
-          przestrzegania zasad właściciela. Ta duma z własności jest wielką
-          zaletą dla osób pragnących się ustatkować.
-        </li>
-        <li>
-          <span className="text-bold">Stabilność: </span>
-          Nie będziesz zdany na łaskę właściciela, który może zdecydować się na
-          sprzedaż domu po zakończeniu najmu. Masz swobodę decydowania, jak
-          długo chcesz pozostać w domu, a ostatecznie, czy i kiedy chcesz go
-          sprzedać.
-        </li>
+          <li>
+            <span className="text-bold">Budowanie kapitału: </span>
+            Jako właściciel domu będziesz miał szansę zbudować kapitał własny i
+            potencjalnie zwiększyć wartość swojego domu. Im dłużej posiadasz
+            swój dom, tym więcej masz kapitału własnego i tym więcej pieniędzy
+            prawdopodobnie zarobisz, gdy go sprzedasz. Kapitał własny może
+            również pozwolić Ci na pożyczenie pieniędzy na duże wydatki i
+            zbudowanie bogactwa, które przyniesie Ci korzyści w późniejszym
+            życiu.
+          </li>
+          <li>
+            <span className="text-bold">
+              Możliwość dostosowania do potrzeb:{" "}
+            </span>
+            Kupno domu oznacza, że jest on Twój - możesz go pomalować,
+            przebudować i dostosować przestrzeń do swoich upodobań bez
+            konieczności przestrzegania zasad właściciela. Ta duma z własności
+            jest wielką zaletą dla osób pragnących się ustatkować.
+          </li>
+          <li>
+            <span className="text-bold">Stabilność: </span>
+            Nie będziesz zdany na łaskę właściciela, który może zdecydować się
+            na sprzedaż domu po zakończeniu najmu. Masz swobodę decydowania, jak
+            długo chcesz pozostać w domu, a ostatecznie, czy i kiedy chcesz go
+            sprzedać.
+          </li>
         </ul>
         <h1>Wady kupna domu</h1>
         <ul>
@@ -261,26 +264,24 @@ const BuyOrRent = () => {
       <article className="articles-box">
         <h1>Sprawdź więcej artykułów na temat kupna domu</h1>
         <div>
-        <Link to="/guides/how-to-buy-a-house">  <div>
-            <h2>
-              Jak kupić dom w 7 krokach
-
-            </h2>
-            <p>Dowiedz się więcej</p>
-          </div></Link>
-          <Link to="/can-i-afford">  <div>
-            <h2>
-           Na jaki dom mogę sobie pozwolić
-
-            </h2>
-            <p>Dowiedz się więcej</p>
-          </div></Link>
-          <Link to="/guides/real-estate-commision">  <div>
-            <h2>
-O prowizji agenta nieruchomości
-            </h2>
-            <p>Dowiedz się więcej</p>
-          </div></Link>
+          <Link to="/guides/how-to-buy-a-house">
+            <div>
+              <h2>Jak kupić dom w 7 krokach</h2>
+              <p>Dowiedz się więcej</p>
+            </div>
+          </Link>
+          <Link to="/can-i-afford">
+            <div>
+              <h2>Na jaki dom mogę sobie pozwolić</h2>
+              <p>Dowiedz się więcej</p>
+            </div>
+          </Link>
+          <Link to="/guides/real-estate-commision">
+            <div>
+              <h2>O prowizji agenta nieruchomości</h2>
+              <p>Dowiedz się więcej</p>
+            </div>
+          </Link>
         </div>
       </article>
     </>

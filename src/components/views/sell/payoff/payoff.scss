@@ -3,7 +3,9 @@
 .payoff-header {
   margin-top: 70px;
   padding: 60px 10%;
-  background-color: $gray;
+  background-image: url("../../../../goodimages/payoff.jpeg");
+  background-position: center;
+  background-size: 100%;
   .payoff-header__gridbox {
     display: grid;
     grid-template-columns: 0.7fr 1fr 0.3fr;
@@ -13,7 +15,7 @@
   }
 
   .payoff-header__calc{
-    background-color: white;
+    background-color: rgba($color: #FFF, $alpha: 0.7);
     display: flex;
     flex-direction: column;
     padding: 30px;
@@ -23,17 +25,20 @@
     }
     p{
         margin: 5px 0px;
+        color: #000;
 
     }
     button{
         margin: 10px;
+        background-color: $blue;
+        color: white;
     }
     p:last-of-type{
         font-size: 10px;
     }
   }
   .payoff-header__res{
-    background-color: white;
+    background-color: rgba($color: #FFF, $alpha: 0.7);
     text-align: center;
     padding: 10px;
        display: grid;
@@ -103,8 +108,8 @@
 }
 }
 .payoff-header__exclam{
-    background-color: white;
-    display: flex;
+  background-color: rgba($color: #FFF, $alpha: 0.7);
+  display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
