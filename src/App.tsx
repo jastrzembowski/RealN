@@ -7,24 +7,25 @@ import ScrollToTop from "./components/views/utils/ScrollToTop";
 import { Outlet, useLocation } from "react-router-dom";
 import Main from "./components/views/main/Main";
 import { useCallback, useEffect, useState } from "react";
-import { useAppDispatch } from "./components/store/configureStore";
+import { useAppDispatch, useAppSelector } from "./components/store/configureStore";
 import { fetchCurrentUser } from "./components/views/LoginRegister/accountSlice";
-import { fetchOfferLength } from "./components/views/offers/catalogSlice";
+import { fetchOffersAsync } from "./components/views/offers/catalogSlice";
 
 const App = () => {
   const location = useLocation();
   const dispatch = useAppDispatch();
   const [loading, setLoading] = useState(true);
-
+  const { dispPage, displayLimit, filterValue} = useAppSelector((state)=>state.catalog)
 
   const initApp = useCallback(async () => {
     try{
       await dispatch(fetchCurrentUser())
-      await dispatch(fetchOfferLength())
+      await dispatch(fetchOffersAsync({dispPage, displayLimit, filterValue}))
+
     } catch (error){
       console.log(error)
     }
-  }, [dispatch])
+  }, [dispatch, dispPage, displayLimit, filterValue])
 
   useEffect(() => {
     initApp().then(() => setLoading(false));

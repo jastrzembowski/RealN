@@ -1,5 +1,5 @@
 export interface Offer {
-    title: String,
+    title: string,
     type: String,
     city: String,
     size: String,
@@ -33,9 +33,9 @@ export interface Offer {
     media: String[],
     direction: String[],
     description: String,
-    price: Number,
-    priceM: Number,
-    imageAsset: ImageAsset
+    price: String,
+    priceM: String,
+    imageAsset: ImageAsset | null
  }
 
  export interface ImageAsset {

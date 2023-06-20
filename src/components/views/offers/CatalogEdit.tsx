@@ -23,10 +23,36 @@ import {
 import { ImageAsset, Offer } from "../../models/offer";
 import Loader from "../utils/Loader";
 import AlertDialog from "../utils/AlertDialog";
-import  ButtonGroup  from "../AddOffer/components/ButtonGroup";
-import { style, typeLists, floorLists, roomLists, conditionList, parkingList, buildList, materialList, transportList, educationList, healthList, recreationList, othersList, amenitiesList, stateList, kitchenList, bathroomList, installationList, loudnessList, windowList, furnitureList, energyList, mediaList, directionsList } from "../AddOffer/components/Lists";
+import ButtonGroup from "../AddOffer/components/ButtonGroup";
+import {
+  style,
+  typeLists,
+  floorLists,
+  roomLists,
+  conditionList,
+  parkingList,
+  buildList,
+  materialList,
+  transportList,
+  educationList,
+  healthList,
+  recreationList,
+  othersList,
+  amenitiesList,
+  stateList,
+  kitchenList,
+  bathroomList,
+  installationList,
+  loudnessList,
+  windowList,
+  furnitureList,
+  energyList,
+  mediaList,
+  directionsList,
+} from "../AddOffer/components/Lists";
 import SelectGroup from "../AddOffer/components/SelectGroup";
 import { onChange } from "../AddOffer/components/onChangefunc";
+import { resizeImage } from "../utils/resize";
 const Parse = require("parse/dist/parse.min.js");
 
 export default function CatalogEdit() {
@@ -37,14 +63,14 @@ export default function CatalogEdit() {
   const offer = useAppSelector((state) =>
     offersSelectors.selectById(state, id!)
   );
-
   useEffect(() => {
     if (offer === undefined || !offerLoaded) dispatch(fetchOfferAsync(id!));
 
+    console.log(offer)
     if (offer) {
-      setTitle(offer?.title);
+      setTitle(offer[1].title);
       setSize(offer[1].size);
-      setType(offer[1].type)
+      setType(offer[1].type);
       setCity(offer[1].city);
       setLand(offer[1].land);
       setDistrict(offer[1].district);
@@ -116,9 +142,9 @@ export default function CatalogEdit() {
   const [media, setMedia] = useState([""]);
   const [direction, setDirection] = useState([""]);
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState(0);
-  const [priceM, setPriceM] = useState(0);
-  const [imageAsset, setImageAsset] = useState<ImageAsset>({
+  const [price, setPrice] = useState("0");
+  const [priceM, setPriceM] = useState("0");
+  const [imageAsset, setImageAsset] = useState<ImageAsset | null>({
     __type: "",
     name: "",
     url: "",
@@ -127,6 +153,7 @@ export default function CatalogEdit() {
     updatedAt: "",
     objectId: "",
   });
+  const [imgPrev, setImgPrev] = useState("");
 
   const offerData: Offer = {
     title: title,
@@ -168,20 +195,25 @@ export default function CatalogEdit() {
     imageAsset: imageAsset,
   };
 
-  const uploadImage = (e: any) => {
+  const uploadImage = async (e: any) => {
     setIsLoading(true);
     const imageFile = e.target.files[0];
-    const imageUrl = new Parse.File("image.jpg", imageFile);
+    const resizedImage = await resizeImage(imageFile);
+    const imageUrl = new Parse.File("image.jpg", { base64: resizedImage });
+    setImgPrev(URL.createObjectURL(imageFile));
     setImageAsset(imageUrl);
     setIsLoading(false);
   };
-
+  const deleteImage = (e: any) => {
+    setImageAsset(null);
+  };
   const handleShowMore = (e: any) => {
     e.preventDefault();
     setShowMore(!showMore);
   };
   const editOffer = () => {
-    dispatch(updateOfferAsync({offerData, id}));
+    dispatch(updateOfferAsync({ offerData: offerData, id: id }));
+
   };
   if (status.includes("pending")) return <h1>Loading</h1>;
   if (!offer) return <h1 style={{ marginTop: "150px" }}>Not found</h1>;
@@ -207,7 +239,7 @@ export default function CatalogEdit() {
               onChange={(e) => setTitle(e.target.value)}
             />
           </article>
-           <article>
+          <article>
             <h3>Podstawowe informacje </h3>
             <div className="flex-row">
               <FormControl style={style}>
@@ -277,7 +309,7 @@ export default function CatalogEdit() {
                 <Loader />
               ) : (
                 <>
-                  {imageAsset.url === "" ? (
+                  {!imageAsset ? (
                     <>
                       <label>
                         <div>
@@ -294,11 +326,28 @@ export default function CatalogEdit() {
                         />
                       </label>
                     </>
+                  ) : !imgPrev ? (
+                    <>
+                      <div className="image-holder">
+                        <img src={imageAsset.url} alt="uploaded" />
+                        <button
+                          type="button"
+                          className="delete-button"
+                          onClick={deleteImage}
+                        >
+                          <MdDelete style={{ color: "white" }} />
+                        </button>
+                      </div>
+                    </>
                   ) : (
                     <>
                       <div className="image-holder">
-                        <img src={imageAsset.url} alt="uploaded" />{" "}
-                        <button type="button" className="delete-button">
+                        <img src={imgPrev} alt="uploaded" />
+                        <button
+                          type="button"
+                          className="delete-button"
+                          onClick={deleteImage}
+                        >
                           <MdDelete style={{ color: "white" }} />
                         </button>
                       </div>
@@ -627,7 +676,7 @@ export default function CatalogEdit() {
             id="outlined-basic"
             label="Cena"
             variant="outlined"
-            value={price || ""}
+            value={price || "0"}
             style={style}
             onChange={(e: any) => setPrice(e.target.value)}
           />
@@ -635,11 +684,13 @@ export default function CatalogEdit() {
             id="outlined-basic"
             label="Cena-m"
             variant="outlined"
-            value={priceM || ""}
+            value={priceM || "0"}
             style={style}
             onChange={(e: any) => setPriceM(e.target.value)}
           />
-          <button className="add-offer-button" onClick={()=>editOffer()}>Zapisz zmiany</button>
+          <button className="add-offer-button" onClick={() => editOffer()}>
+            Zapisz zmiany
+          </button>
         </form>
       </article>
     </ThemeProvider>

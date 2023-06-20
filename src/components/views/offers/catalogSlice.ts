@@ -19,26 +19,27 @@ interface CatalogState {
   dispPage: number;
   displayLimit: number;
   count: number;
+  filterValue: string;
 }
 
 const offersAdapter = createEntityAdapter<any>({
-  selectId: (offer) => offer[0],
+  selectId: (allOffers) => allOffers[0],
 });
 
-export const fetchOfferLength = createAsyncThunk<any>(
-  "catalog/fetchOfferLength",
-  async (_, thunkAPI) => {
-    try {
-      const query = new Parse.Query("Offers");
-      const length = await query.find().then(function (results: any) {
-        return results.length;
-      });
-      return length;
-    } catch (error: any) {
-      thunkAPI.rejectWithValue({ error: error.data });
-    }
-  }
-);
+// export const fetchOfferLength = createAsyncThunk<any>(
+//   "catalog/fetchOfferLength",
+//   async (_, thunkAPI) => {
+//     try {
+//       const query = new Parse.Query("Offers");
+//       const length = await query.find().then(function (results: any) {
+//         return results.length;
+//       });
+//       return length;
+//     } catch (error: any) {
+//       thunkAPI.rejectWithValue({ error: error.data });
+//     }
+//   }
+// );
 
 export const createOfferAsync = createAsyncThunk<any, { offerData: Offer }>(
   "catalog/createOfferAsync",
@@ -64,12 +65,13 @@ export const updateOfferAsync = createAsyncThunk<
   any,
   { offerData: Offer; id: String | undefined }
 >("catalog/updateOfferAsync", async ({ offerData, id }, thunkAPI) => {
-  const query = Parse.Query("Offers");
+  const query = new Parse.Query("Offers");
   const item = await query.get(id);
   try {
     item.set(offerData);
     item.save();
     router.navigate("/catalog");
+
     return true;
   } catch (error: any) {
     return thunkAPI.rejectWithValue({ error: error.data });
@@ -78,22 +80,34 @@ export const updateOfferAsync = createAsyncThunk<
 
 export const fetchOffersAsync = createAsyncThunk<
   any,
-  { dispPage: number; displayLimit: number }
->("catalog/fetchOffersAsync", async ({ dispPage, displayLimit }, thunkAPI) => {
-  try {
-    const query = new Parse.Query("Offers");
-    query.descending("updatedAt");
-    query.limit(displayLimit);
-    query.skip((dispPage - 1) * displayLimit);
-    const allOffersGet = await query.find();
-    const allOffers = allOffersGet.map((item: any) => {
-      return [item.id, item.toJSON()];
-    });
-    return allOffers;
-  } catch (error: any) {
-    return thunkAPI.rejectWithValue({ error: error.data });
+  { dispPage: number; displayLimit: number; filterValue: string }
+>(
+  "catalog/fetchOffersAsync",
+  async ({ dispPage, displayLimit, filterValue }, thunkAPI) => {
+    try {
+      const query = new Parse.Query("Offers");
+
+      query.descending("updatedAt");
+
+      if (filterValue !== "") {
+        query.matches("title", `.*${filterValue}.*`, "i");
+      }
+      const length = await query.find().then(function (results: any) {
+        return results.length;
+      });
+      query.limit(displayLimit);
+      query.skip((dispPage - 1) * displayLimit);
+      const allOffersGet = await query.find();
+      const allOffers = allOffersGet.map((item: any) => {
+        return [item.id, item.toJSON()];
+      });
+
+      return { allOffers: allOffers, length: length };
+    } catch (error: any) {
+      return thunkAPI.rejectWithValue({ error: error.data });
+    }
   }
-});
+);
 
 export const fetchOfferAsync = createAsyncThunk<any, string>(
   "catalog/fetchOfferAsync",
@@ -117,7 +131,6 @@ export const deleteOfferAsync = createAsyncThunk<any, any>(
     try {
       await item.destroy();
       alert("Usunięto");
-      fetchOfferLength();
       window.location.reload();
       router.navigate("/catalog");
       return true;
@@ -139,23 +152,23 @@ export const catalogSlice = createSlice({
     dispPage: 1,
     displayLimit: 2,
     count: 0,
+    filterValue: "",
   }),
   reducers: {
     setPageNumber: (state, action) => {
       state.offersLoaded = false;
       state.dispPage = action.payload;
     },
+
   },
   extraReducers: (builder) => {
     builder.addCase(fetchOffersAsync.fulfilled, (state, action) => {
-      offersAdapter.setAll(state, action.payload);
+      offersAdapter.setAll(state, action.payload.allOffers);
       state.status = "idle";
       state.offersLoaded = true;
+      state.count = action.payload.length;
     });
-    builder.addCase(fetchOfferLength.fulfilled, (state, action) => {
-      state.status = "idle";
-      state.count = action.payload;
-    });
+
     builder.addCase(fetchOfferAsync.pending, (state) => {
       state.status = "pendingFetchProduct";
       state.offerAdding = true;
@@ -176,7 +189,6 @@ export const catalogSlice = createSlice({
     });
     builder.addCase(updateOfferAsync.fulfilled, (state) => {
       state.status = "idle";
-      state.offerLoaded = false;
     });
     builder.addCase(createOfferAsync.rejected, (state) => {
       state.status = "idle";
@@ -188,17 +200,13 @@ export const catalogSlice = createSlice({
     builder.addCase(updateOfferAsync.pending, (state) => {
       state.status = "pendingUpdateOffer";
     });
-    builder.addMatcher(
-      isAnyOf(fetchOffersAsync.pending, fetchOfferLength.pending),
-      (state) => {
-        state.status = "pendingFetchProducts";
-      }
-    );
+    builder.addMatcher(isAnyOf(fetchOffersAsync.pending), (state) => {
+      state.status = "pendingFetchProducts";
+    });
     builder.addMatcher(
       isAnyOf(
         fetchOffersAsync.rejected,
         fetchOfferAsync.rejected,
-        fetchOfferLength.rejected,
         deleteOfferAsync.rejected,
         updateOfferAsync.rejected
       ),
@@ -206,7 +214,6 @@ export const catalogSlice = createSlice({
         state.status = "idle";
       }
     );
-    
   },
 });
 

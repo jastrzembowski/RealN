@@ -6,7 +6,7 @@ const TipsForRenters = () => {
     <article>
       <div className="tips-head">
         <h1>
-          6 kluczowych wskazówek <br /> dla wynajmujących po raz pierwszy
+          Porady dla najemców
         </h1>
       </div>
       <article className="tips-text">

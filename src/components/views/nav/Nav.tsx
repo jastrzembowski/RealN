@@ -14,8 +14,6 @@ import { useAppDispatch, useAppSelector } from "../../store/configureStore";
 import Logout from "../LoginRegister/Logout";
 import { setPage } from "../../store/utilitySlice";
 
-const Parse = require("parse/dist/parse.min.js");
-
 const Nav = () => {
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.account);
@@ -35,7 +33,7 @@ const Nav = () => {
           <img src={location.pathname === "/" ? logo : logo2} alt="logo"></img>
         </Link>
         {location.pathname === "/" ? (
-          ""
+          <>{user && <p className="nav-user__greeting">Witaj {user[1]}</p>}</>
         ) : (
           <div className="desktop">
             <input
@@ -285,16 +283,17 @@ const Nav = () => {
           }
         >
           {user && (
-            <>
-              <p>Witaj {user[1]}</p>
-              <Link to="catalog">
-                <li>Katalog Ofert</li>
-              </Link>
-              <Link to="/add-new-offer">
-                <li>Dodaj ofertę</li>
-              </Link>
-              <Logout />
-            </>
+            <div className="nav-user">
+              <div>
+                <Link to="catalog">
+                  <li>Katalog Ofert</li>
+                </Link>
+                <Link to="/add-new-offer">
+                  <li>Dodaj ofertę</li>
+                </Link>
+                <Logout />
+              </div>
+            </div>
           )}
 
           <li className="mobile" onClick={() => setMenuActive(!menuActive)}>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./catalog.scss";
 import { Box, Pagination } from "@mui/material";
 import SearchNameComponent from "./SearchNameComponent";
@@ -7,20 +7,19 @@ import { Link } from "react-router-dom";
 import RadioButtonGroup from "./RadioButtonGroup";
 import { useAppDispatch, useAppSelector } from "../../store/configureStore";
 import {
-  deleteOfferAsync,
   fetchOffersAsync,
   offersSelectors,
   setPageNumber,
 } from "./catalogSlice";
+import { Offer } from "../../models/offer";
 
 export default function Catalog() {
   const catalog = useAppSelector(offersSelectors.selectAll);
-  const { offersLoaded, dispPage, displayLimit, count } = useAppSelector(
-    (state) => state.catalog
-  );
-
+  const { offersLoaded, dispPage, displayLimit, count, filterValue } =
+    useAppSelector((state) => state.catalog);
   const dispatch = useAppDispatch();
-  const [limit, setLimit] = useState(displayLimit);
+  
+
   const type = ["Dom", "Mieszkanie", "Grunt"];
   const sortOptions = [
     { value: "name", label: "Alfabetycznie" },
@@ -28,15 +27,19 @@ export default function Catalog() {
     { value: "price", label: "Cena rosnąco" },
   ];
   useEffect(() => {
-    if (!offersLoaded) dispatch(fetchOffersAsync({ dispPage, displayLimit }));
-  }, [offersLoaded, dispatch, catalog, dispPage, displayLimit]);
+    if (!offersLoaded)
+      dispatch(fetchOffersAsync({ dispPage, displayLimit, filterValue }));
+  }, [offersLoaded, dispatch, catalog, dispPage, displayLimit, filterValue]);
 
   return (
     <div className="catalog-flexbox">
       <div className="catalog-container">
         <div className="filters-box">
           <h1>Fitruj oferty</h1>
-          <SearchNameComponent />
+          <SearchNameComponent
+            dispPage={dispPage}
+            displayLimit={displayLimit}
+          />
           <h3>Typ</h3>
           <CheckboxButtons items={type} onChange={() => console.log(type)} />
           <h3>Sortuj</h3>
@@ -50,7 +53,7 @@ export default function Catalog() {
           <>
             {offersLoaded ? (
               <div className="catalog-box">
-                {catalog.map((offer, i) => (
+                {catalog.map((offer: [string, Offer], i: number) => (
                   <Box
                     className="offer-line"
                     key={i + offer[0]}
@@ -60,7 +63,9 @@ export default function Catalog() {
                     <h3>{offer[0]}</h3>
                     <p>{offer[1].title}</p>
                     <h4>{offer[1].price}</h4>
-                    <img src={offer[1].imageAsset.url} alt={offer.subtitle} />
+                    {offer[1].imageAsset && (
+                      <img src={offer[1].imageAsset.url} alt={offer[1].title} />
+                    )}{" "}
                   </Box>
                 ))}
                 <Pagination

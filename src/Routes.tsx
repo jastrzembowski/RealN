@@ -15,7 +15,7 @@ import SellWorth from "./components/views/sell/sellworth/SellWorth";
 import SellDashboard from "./components/views/sell/selldashboard/SellDashboard";
 import PayOff from "./components/views/sell/payoff/Payoff";
 import SellGuide from "./components/views/sell/sellguide/SellGuide";
-import HomeImprovement from "./components/views/sell/homeimprovement/HomeImprovement";
+import HomeImprovement from "./components/views/sell/homepreparation/HomePreparation";
 import RentGuide from "./components/views/rent/rentguide/RentGuide";
 import BuyOrRent from "./components/views/rent/buyorrent/BuyOrRent";
 import RentTrends from "./components/views/rent/renttrends/RentTrends";
@@ -32,6 +32,7 @@ import FiveWays from "./components/views/sell/sellworth/FiveWays";
 import TenAdvices from "./components/views/sell/sellworth/TenAdvices";
 import SellWith from "./components/views/sell/sellwithrealn/SellWith";
 import App from "./App";
+import HomePreparation from "./components/views/sell/homepreparation/HomePreparation";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       { path: "can-i-afford", element: <CanIAfford /> },
       { path: "guides", element: <BuyGuide /> },
       { path: "guides/how-to-buy-a-house", element: <BuyInSteps /> },
+      {
+        path: "guides/how-to-prepare-my-home",
+        element: <HomePreparation />,
+      },
       {
         path: "guides/how-to-choose-real-estate-agent",
         element: <ChooseAgent />,

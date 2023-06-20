@@ -13,7 +13,7 @@ import TextField from "@mui/material/TextField";
 import theme from "./styles";
 import { ThemeProvider } from "@mui/material/styles";
 import { motion } from "framer-motion";
-import { useAppDispatch, useAppSelector } from "../../store/configureStore";
+import { useAppDispatch } from "../../store/configureStore";
 import { createOfferAsync } from "../offers/catalogSlice";
 import { ImageAsset, Offer } from "../../models/offer";
 import router from "../../../Routes";
@@ -48,6 +48,7 @@ import {
 } from "./components/Lists";
 import SelectGroup from "./components/SelectGroup";
 import { onChange } from "./components/onChangefunc";
+import { resizeImage } from "../utils/resize";
 const Parse = require("parse/dist/parse.min.js");
 
 export default function AddOffer() {
@@ -89,8 +90,8 @@ export default function AddOffer() {
   const [media, setMedia] = useState([""]);
   const [direction, setDirection] = useState([""]);
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState(0);
-  const [priceM, setPriceM] = useState(0);
+  const [price, setPrice] = useState("0");
+  const [priceM, setPriceM] = useState("0");
   const [imageAsset, setImageAsset] = useState<ImageAsset>({
     __type: "",
     name: "",
@@ -148,11 +149,12 @@ export default function AddOffer() {
     toast.success("Pomyślnie utworzono ofertę!");
     router.navigate("/catalog");
   };
-
-  const uploadImage = (e: any) => {
+  
+  const uploadImage = async (e: any) => {
     setIsLoading(true);
     const imageFile = e.target.files[0];
-    const imageUrl = new Parse.File("image.jpg", imageFile);
+    const resizedImage = await resizeImage(imageFile);
+    const imageUrl = new Parse.File("image.jpg", { base64: resizedImage });
     setImgPrev(URL.createObjectURL(imageFile));
     setImageAsset(imageUrl);
     setIsLoading(false);
@@ -603,7 +605,7 @@ export default function AddOffer() {
             id="outlined-basic"
             label="Cena"
             variant="outlined"
-            value={price || ""}
+            value={price || "0"}
             style={style}
             onChange={(e: any) => setPrice(e.target.value)}
           />
@@ -611,7 +613,7 @@ export default function AddOffer() {
             id="outlined-basic"
             label="Cena-m"
             variant="outlined"
-            value={priceM || ""}
+            value={priceM || "0"}
             style={style}
             onChange={(e: any) => setPriceM(e.target.value)}
           />

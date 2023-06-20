@@ -1,6 +1,5 @@
 @import "../../../index.scss";
 
-
 nav {
   position: absolute;
   top: 0;
@@ -20,7 +19,7 @@ nav {
     list-style-type: none;
     padding-right: 50px;
     align-items: center;
-    font-size: 13px;
+    font-size: 11px;
     z-index: 3;
 
     li,
@@ -255,7 +254,7 @@ nav {
   p,
   a {
     margin: 2px;
-    font-size: 12px;
+    font-size: 10px;
     text-decoration: none;
     color: black;
     padding: 10px 4px;
@@ -303,7 +302,20 @@ nav {
 .phone-box {
   width: 90px;
 }
+.nav-user__greeting{
+font-size: 12px;
+color: white;
+}
+.nav-user{
+  display: flex;
+  flex-direction: column;
 
+  div{
+    display: flex;
+    flex-direction: row;
+
+  }
+}
 .nav2 {
   position: absolute;
   top: 0;
@@ -354,18 +366,23 @@ nav {
 .nav-searcher-box {
   display: flex;
   align-items: center;
-  input {
-    height: 34px;
-    width: 300px;
-    font-size: 16px;
-  }
-  .nav-glass-icon {
-    background-color: $blue;
-    color: white;
-    padding: 12px;
-    cursor: pointer;
-    &:hover {
-      background-color: $dark-blue;
+  div {
+    display: flex;
+
+    align-items: normal;
+    input {
+      height: 32px;
+      width: 270px;
+      font-size: 12px;
+    }
+    .nav-glass-icon {
+      background-color: $blue;
+      color: white;
+      padding: 11px;
+      cursor: pointer;
+      &:hover {
+        background-color: $dark-blue;
+      }
     }
   }
 }
@@ -375,32 +392,34 @@ nav {
 .desktop {
   display: flex;
 }
- .mobile-menu {
+.mobile-menu {
   display: none;
 }
 .nav2 .nav-bar2 .nav-login-bar2 li.mobile,
 nav .nav-bar .nav-login-bar li.mobile {
   display: none;
 }
-.nav2 .nav-bar2 .nav-login-bar2 li.small{  display: none;
+.nav2 .nav-bar2 .nav-login-bar2 li.small {
+  display: none;
 }
 @media (max-width: 1500px) {
   .desktop {
     display: none;
   }
   .nav2 .nav-bar2 .nav-login-bar2 li.small,
-  nav .nav-bar .nav-login-bar li.small{  
+  nav .nav-bar .nav-login-bar li.small {
     display: block;
   }
-  .nav2 .nav-bar2 .nav-login-bar2{
-    .desktop{
-      display: none
+  .nav2 .nav-bar2 .nav-login-bar2 {
+    .desktop {
+      display: none;
     }
   }
 }
 
 @media (max-width: 900px) {
-  nav , .nav2{
+  nav,
+  .nav2 {
     .desktop {
       display: none;
     }
@@ -408,7 +427,7 @@ nav .nav-bar .nav-login-bar li.mobile {
   .nav2 .nav-bar2 .nav-login-bar2 li.mobile,
   nav .nav-bar .nav-login-bar li.mobile {
     display: block;
-}
+  }
   .mobile-menu {
     position: absolute;
     top: 70px;
@@ -448,25 +467,27 @@ nav .nav-bar .nav-login-bar li.mobile {
   }
 }
 @media (max-width: 500px) {
-  nav, .nav2 {
-    img{
+  nav,
+  .nav2 {
+    img {
       height: 32px;
       margin: 5px;
     }
-    .nav-bar , .nav-bar2{
+    .nav-bar,
+    .nav-bar2 {
       padding: 0px;
-      .nav-login-bar, .nav-login-bar2 {
+      .nav-login-bar,
+      .nav-login-bar2 {
         padding: 0px;
         margin-bottom: 10px;
         padding-right: 5px;
-        li{
+        li {
           padding: 6px 10px;
-          svg{
+          svg {
             font-size: 16px;
           }
         }
       }
     }
   }
-
 }
