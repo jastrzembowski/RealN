@@ -26,20 +26,6 @@ const offersAdapter = createEntityAdapter<any>({
   selectId: (allOffers) => allOffers[0],
 });
 
-// export const fetchOfferLength = createAsyncThunk<any>(
-//   "catalog/fetchOfferLength",
-//   async (_, thunkAPI) => {
-//     try {
-//       const query = new Parse.Query("Offers");
-//       const length = await query.find().then(function (results: any) {
-//         return results.length;
-//       });
-//       return length;
-//     } catch (error: any) {
-//       thunkAPI.rejectWithValue({ error: error.data });
-//     }
-//   }
-// );
 
 export const createOfferAsync = createAsyncThunk<any, { offerData: Offer }>(
   "catalog/createOfferAsync",
@@ -86,9 +72,7 @@ export const fetchOffersAsync = createAsyncThunk<
   async ({ dispPage, displayLimit, filterValue }, thunkAPI) => {
     try {
       const query = new Parse.Query("Offers");
-
       query.descending("updatedAt");
-
       if (filterValue !== "") {
         query.matches("title", `.*${filterValue}.*`, "i");
       }
