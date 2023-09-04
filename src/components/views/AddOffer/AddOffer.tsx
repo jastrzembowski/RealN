@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./addoffer.scss";
 import "../../../index.scss";
 import {
@@ -92,16 +92,7 @@ export default function AddOffer() {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("0");
   const [priceM, setPriceM] = useState("0");
-  const [imageAsset, setImageAsset] = useState<ImageAsset>({
-    __type: "",
-    name: "",
-    url: "",
-    agent: "",
-    createdAt: "",
-    updatedAt: "",
-    objectId: "",
-  });
-  const [imgPrev, setImgPrev] = useState("");
+  const [imageAsset, setImageAsset] = useState<ImageAsset[]>([]);
 
   const offerData: Offer = {
     title: title,
@@ -140,7 +131,7 @@ export default function AddOffer() {
     description: description,
     price: price,
     priceM: priceM,
-    imageAsset: imageAsset,
+    imageAsset: { ...imageAsset },
   };
 
   const createOffer = async function (event: any) {
@@ -149,22 +140,41 @@ export default function AddOffer() {
     toast.success("Pomyślnie utworzono ofertę!");
     router.navigate("/catalog");
   };
-  
   const uploadImage = async (e: any) => {
     setIsLoading(true);
-    const imageFile = e.target.files[0];
-    const resizedImage = await resizeImage(imageFile);
-    const imageUrl = new Parse.File("image.jpg", { base64: resizedImage });
-    setImgPrev(URL.createObjectURL(imageFile));
-    setImageAsset(imageUrl);
-    setIsLoading(false);
+    try {
+      const files = Array.from(e.target.files || []);
+      const processedImages = await Promise.all(
+        files.map(async (file: any) => {
+          const resizedImage = await resizeImage(file);
+          const image = new Parse.File("image.jpg", { base64: resizedImage });
+          image.url = URL.createObjectURL(file);
+          return image;
+        })
+      );
+      setImageAsset((prevImageAsset) => [
+        ...prevImageAsset,
+        ...processedImages,
+      ]);
+    } catch (error) {
+      console.error("Error uploading images:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
+  const deleteImage = (i: string) => {
+    setImageAsset(
+      imageAsset.filter(function (img) {
+        return img.url.toString() !== i.toString();
+      })
+    );
+    console.log(imageAsset);
+  };
   const handleShowMore = (e: any) => {
     e.preventDefault();
     setShowMore(!showMore);
   };
-
   return (
     <ThemeProvider theme={theme}>
       <article className="add-offer_box">
@@ -255,33 +265,38 @@ export default function AddOffer() {
                 <Loader />
               ) : (
                 <>
-                  {imageAsset.url === "" ? (
+                  <label>
+                    <div>
+                      <MdCloudUpload
+                        style={{ fontSize: "35px", color: "gray" }}
+                      />
+                      <p>Kliknij aby dodać zdjęcie</p>
+                    </div>
+                    <input
+                      type="file"
+                      name="uploadimage"
+                      accept="image/*"
+                      multiple
+                      style={{ display: "none" }}
+                      onChange={uploadImage}
+                    />
+                  </label>
+
+                  {imageAsset.map((i) => (
                     <>
-                      <label>
-                        <div>
-                          <MdCloudUpload
-                            style={{ fontSize: "35px", color: "gray" }}
-                          />
-                          <p>Kliknij aby dodać zdjęcie</p>
-                        </div>
-                        <input
-                          type="file"
-                          name="uploadimage"
-                          accept="image/*"
-                          onChange={uploadImage}
-                        />
-                      </label>
-                    </>
-                  ) : (
-                    <>
-                      <div className="image-holder">
-                        <img src={imgPrev} alt="uploaded" />
+                      <div className="image-holder" key={i.url}>
+                        <img src={i.url} alt="uploaded" />
                         <button type="button" className="delete-button">
-                          <MdDelete style={{ color: "white" }} />
+                          <MdDelete
+                            style={{ color: "white" }}
+                            onClick={(e) => {
+                              deleteImage(i.url);
+                            }}
+                          />
                         </button>
                       </div>
                     </>
-                  )}
+                  ))}
                 </>
               )}
             </div>

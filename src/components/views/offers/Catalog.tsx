@@ -64,7 +64,7 @@ export default function Catalog() {
                     <p>{offer[1].title}</p>
                     <h4>{offer[1].price}</h4>
                     {offer[1].imageAsset && (
-                      <img src={offer[1].imageAsset.url} alt={offer[1].title} />
+                      <img src={offer[1].imageAsset[0].url} alt={offer[1].title} />
                     )}{" "}
                   </Box>
                 ))}

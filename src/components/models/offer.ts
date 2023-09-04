@@ -35,7 +35,7 @@ export interface Offer {
     description: String,
     price: String,
     priceM: String,
-    imageAsset: ImageAsset | null
+    imageAsset: ImageAsset[] | null
  }
 
  export interface ImageAsset {

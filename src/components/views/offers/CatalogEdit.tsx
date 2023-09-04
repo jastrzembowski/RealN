@@ -53,6 +53,7 @@ import {
 import SelectGroup from "../AddOffer/components/SelectGroup";
 import { onChange } from "../AddOffer/components/onChangefunc";
 import { resizeImage } from "../utils/resize";
+
 const Parse = require("parse/dist/parse.min.js");
 
 export default function CatalogEdit() {
@@ -66,7 +67,7 @@ export default function CatalogEdit() {
   useEffect(() => {
     if (offer === undefined || !offerLoaded) dispatch(fetchOfferAsync(id!));
 
-    console.log(offer)
+    console.log(offer);
     if (offer) {
       setTitle(offer[1].title);
       setSize(offer[1].size);
@@ -103,6 +104,9 @@ export default function CatalogEdit() {
       setDirection(offer[1].direction);
       setDescription(offer[1].description);
       setImageAsset(offer[1].imageAsset);
+      setImgPrev(offer[1].imageAsset[0].url);
+      setPrice(offer[1].price);
+      setPriceM(offer[1].priceM)
     }
   }, [offerLoaded, dispatch, id, offer]);
 
@@ -144,17 +148,10 @@ export default function CatalogEdit() {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("0");
   const [priceM, setPriceM] = useState("0");
-  const [imageAsset, setImageAsset] = useState<ImageAsset | null>({
-    __type: "",
-    name: "",
-    url: "",
-    agent: "",
-    createdAt: "",
-    updatedAt: "",
-    objectId: "",
-  });
+  const [imageAsset, setImageAsset] = useState<ImageAsset[] | null>([]);
   const [imgPrev, setImgPrev] = useState("");
 
+  console.log(imageAsset);
   const offerData: Offer = {
     title: title,
     size: size,
@@ -197,10 +194,15 @@ export default function CatalogEdit() {
 
   const uploadImage = async (e: any) => {
     setIsLoading(true);
+    console.log(imageAsset);
     const imageFile = e.target.files[0];
+    console.log(offerData);
+
     const resizedImage = await resizeImage(imageFile);
     const imageUrl = new Parse.File("image.jpg", { base64: resizedImage });
     setImgPrev(URL.createObjectURL(imageFile));
+    console.log(imageAsset);
+
     setImageAsset(imageUrl);
     setIsLoading(false);
   };
@@ -213,7 +215,6 @@ export default function CatalogEdit() {
   };
   const editOffer = () => {
     dispatch(updateOfferAsync({ offerData: offerData, id: id }));
-
   };
   if (status.includes("pending")) return <h1>Loading</h1>;
   if (!offer) return <h1 style={{ marginTop: "150px" }}>Not found</h1>;
@@ -325,19 +326,6 @@ export default function CatalogEdit() {
                           onChange={uploadImage}
                         />
                       </label>
-                    </>
-                  ) : !imgPrev ? (
-                    <>
-                      <div className="image-holder">
-                        <img src={imageAsset.url} alt="uploaded" />
-                        <button
-                          type="button"
-                          className="delete-button"
-                          onClick={deleteImage}
-                        >
-                          <MdDelete style={{ color: "white" }} />
-                        </button>
-                      </div>
                     </>
                   ) : (
                     <>
@@ -663,7 +651,7 @@ export default function CatalogEdit() {
           <article>
             <h3>Opis</h3>
             <p>Opis powinien zawierać minimalnie 30 znaków</p>
-            <p>Opis {description.length} / 4000</p>
+            {description && <p>Opis {description.length} / 4000</p>}
             <textarea
               maxLength={4000}
               minLength={30}

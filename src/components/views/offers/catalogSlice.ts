@@ -36,6 +36,7 @@ export const createOfferAsync = createAsyncThunk<any, { offerData: Offer }>(
       query.equalTo("user", Parse.User.current());
       const agent = await query.find();
       let offer = new Parse.Object("Offers");
+
       offer.set(offerData);
       offer.set("agent", agent.length > 0 ? agent[0] : null);
       offer.save();
@@ -115,8 +116,9 @@ export const deleteOfferAsync = createAsyncThunk<any, any>(
     try {
       await item.destroy();
       alert("Usunięto");
-      window.location.reload();
       router.navigate("/catalog");
+      window.location.reload();
+
       return true;
     } catch (error: any) {
       return thunkAPI.rejectWithValue({ error: error.data });
@@ -134,7 +136,7 @@ export const catalogSlice = createSlice({
     data: [],
     offerAdding: false,
     dispPage: 1,
-    displayLimit: 2,
+    displayLimit: 20,
     count: 0,
     filterValue: "",
   }),
