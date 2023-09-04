@@ -8,7 +8,7 @@ import { Offer } from "../../models/offer";
 
 export default function EstateSlider() {
   const catalog = useAppSelector(offersSelectors.selectAll);
-  const { offersLoaded, dispPage, displayLimit, count, filterValue } =
+  const { offersLoaded, dispPage, displayLimit, filterValue } =
     useAppSelector((state) => state.catalog);
   const dispatch = useAppDispatch();
 
