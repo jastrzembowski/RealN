@@ -6,7 +6,7 @@ export default function OfferCard(props: any) {
   console.log(props.offer[0])
   return (
     <div className="offer-box">
-      <img src={props.offer[1].imageAsset[0].url} alt="residence-images" />
+      <img src={props.offer[1].imageAsset[0]} alt="residence-images" />
       <div className="info">
         <div className="features flex">
           <p className="location">

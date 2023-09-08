@@ -26,7 +26,6 @@ const offersAdapter = createEntityAdapter<any>({
   selectId: (allOffers) => allOffers[0],
 });
 
-
 export const createOfferAsync = createAsyncThunk<any, { offerData: Offer }>(
   "catalog/createOfferAsync",
   async ({ offerData }, thunkAPI) => {
@@ -43,6 +42,7 @@ export const createOfferAsync = createAsyncThunk<any, { offerData: Offer }>(
 
       return true;
     } catch (error: any) {
+      console.log(error);
       return thunkAPI.rejectWithValue({ error: error.data });
     }
   }
@@ -145,7 +145,7 @@ export const catalogSlice = createSlice({
       state.offersLoaded = false;
       state.dispPage = action.payload;
     },
-
+    
   },
   extraReducers: (builder) => {
     builder.addCase(fetchOffersAsync.fulfilled, (state, action) => {
